@@ -188,5 +188,3 @@ An entity must meet these two primary conditions to be considered a **weak entit
         * **Example:**  Consider entities `Supplier`, `Part`, and `Project`. A ternary relationship might be "SUPPLIES" relating all three: `Supplier` supplies `Part` to `Project`.  The `Part` entity here has a ternary degree in this context.
 
     * **N-ary Degree (Degree N):**  The entity participates in *N* relationships (where N is any number).  While ternary is sometimes encountered, degrees higher than ternary are less common and can often be decomposed into binary relationships for simplicity in database design.
-
-**Key Takeaway for Exams:** Understand that entity degree is about counting relationships connected to an entity. Know the basic types (unary, binary, ternary) and be able to identify them in ER diagrams.
