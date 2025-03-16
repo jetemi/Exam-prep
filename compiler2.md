@@ -126,7 +126,7 @@ A **translator** is a program that takes a program written in one programming la
 **Question 4**
 
 **(a) Scan the following arithmetic statement and produce the token table and the syntax tree (7 marks):**
-`Sum := Old sum - Value/100.`
+`Sum := Oldsum - Value/100.`
 
 **Token Table:**
 
@@ -134,8 +134,7 @@ A **translator** is a program that takes a program written in one programming la
 |------------|---------------------|------------------|
 | Sum        | IDENTIFIER          | "Sum"            |
 | :=         | ASSIGNMENT_OP       | ":="             |
-| Old        | IDENTIFIER          | "Old"            |
-| sum        | IDENTIFIER          | "sum"            |
+| OldSUM        | IDENTIFIER          | "OldSUM"            |
 | -          | SUBTRACTION_OP      | "-"              |
 | Value      | IDENTIFIER          | "Value"          |
 | /          | DIVISION_OP         | "/"              |
@@ -149,7 +148,7 @@ A **translator** is a program that takes a program written in one programming la
            /   \
          Sum    -
                /  \
-         Old sum  /
+         Old sum  (/)
                  /  \
                Value  100
 ```

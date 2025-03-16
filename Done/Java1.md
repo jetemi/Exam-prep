@@ -54,7 +54,6 @@ Message passing is the way objects communicate with each other in OOP.  Objects 
 
 ```pseudocode
 BEGIN
-  // Initialize variables
   DECLARE total_grades AS INTEGER
   DECLARE average_grade AS REAL
   DECLARE grade AS INTEGER
@@ -63,24 +62,16 @@ BEGIN
   SET total_grades = 0
   SET student_count = 10
 
-  // Loop through each student to get their grade
   FOR i FROM 1 TO student_count DO
     DISPLAY "Enter grade for student " + i + ": "
     INPUT grade
 
-    // Validate grade (optional, but good practice)
-    IF grade < 0 OR grade > 100 THEN
-      DISPLAY "Invalid grade. Please enter a grade between 0 and 100."
-      // You might want to handle invalid input more robustly (e.g., re-prompt)
-    ELSE
-      ADD grade TO total_grades
-    ENDIF
+    total_grades = total_grades + grade
+   
   ENDFOR
 
-  // Calculate the average
   average_grade = total_grades / student_count
 
-  // Display the class average
   DISPLAY "The class average is: " + average_grade
 END
 ```
@@ -96,21 +87,14 @@ public class ClassAverage {
         int totalGrades = 0;
         int studentCount = 10;
 
-        System.out.println("Enter grades for " + studentCount + " students (0-100):");
-
         for (int i = 1; i <= studentCount; i++) {
             System.out.print("Enter grade for student " + i + ": ");
             int grade = input.nextInt();
 
-            if (grade < 0 || grade > 100) {
-                System.out.println("Invalid grade. Please enter a grade between 0 and 100.");
-                i--; // Decrement i to re-enter grade for the current student
-            } else {
-                totalGrades += grade;
-            }
+            total_grades = total_grades + grade;
         }
 
-        double averageGrade = (double) totalGrades / studentCount;
+        double averageGrade = totalGrades / studentCount;
         System.out.println("The class average is: " + averageGrade);
 
         input.close();
@@ -138,12 +122,16 @@ if (count > 10) {
 
 ```java
 total -= --x;
+
+total = total - (--x);
 ```
 
 **(iv) Calculate the remainder after q is divided by divisor, and assign the result to q.**
 
 ```java
 q = q % divisor;
+
+q %= divisor
 ```
 
 **3b. Write a JAVA program to compute n factorial.**
@@ -163,8 +151,16 @@ public class Factorial {
             long factorial = 1;
             for (int i = 1; i <= n; i++) {
                 factorial *= i;
+                
             }
             System.out.println("Factorial of " + n + " is: " + factorial);
+        }
+
+        i = 1;
+
+        while i <= 5; {
+            factorial = 3434
+            i++
         }
         input.close();
     }
@@ -178,7 +174,6 @@ public class Factorial {
 | **Purpose**     | Terminates the loop execution immediately.       | Skips the rest of the current iteration and proceeds to the next iteration. |
 | **Loop Exit**   | Exits the loop entirely.                           | Does not exit the loop; only the current iteration.   |
 | **Control Flow**| Transfers control to the statement immediately following the loop. | Transfers control to the loop's update statement (for `for` loop) or condition check (for `while` and `do-while` loops). |
-| **Usage**       | Used to exit a loop prematurely based on a condition (e.g., finding a specific element). | Used to skip certain iterations based on a condition without exiting the loop entirely (e.g., skipping processing of certain elements). |
 
 **4b(i). Describe the four basic elements of counter-controlled repetition.**
 
