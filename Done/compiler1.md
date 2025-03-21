@@ -442,7 +442,7 @@ LR parsers are powerful bottom-up parsers. Three widely used algorithms for cons
 
 **(ii) With the aid of relevant diagram only, describe the lexical analyzer generator (3½ mks)**
 
-![alt text](image-1.png)
+![alt text](image-2.png)
 
 **(c) Pass vs Phase in Compiler Design (2 mks)**
 

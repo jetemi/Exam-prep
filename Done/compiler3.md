@@ -1,49 +1,10 @@
-Okay, let's tackle the third set of Compiler Construction past questions.
-
 **Question 1**
 
-**(a) Parse Trees and Activities between Lexical and Syntax Analysis (2 + 4½ mks)**
-
-**(i) Briefly describe the term parse tree as used in compiler design (2 mks)**
-
-**Answer:**
-As described in Set 1, Question 1a(i), a **parse tree** (or concrete syntax tree) is a hierarchical tree representation of the syntactic structure of a string according to a context-free grammar. It visually shows how the input source code is derived from the grammar rules.
-
-*   **Nodes:** Internal nodes are non-terminals, leaf nodes are terminals (tokens).
-*   **Structure:** Children of a node represent the right-hand side of the grammar rule applied to derive the non-terminal at that node. The root is the grammar's start symbol.
-*   **Purpose:** To represent the syntactic structure, verify grammatical correctness, and provide a structured input for semantic analysis and subsequent compiler phases.
+**(a)**
 
 **(ii) With the aid of good diagram, explain the major activities taken place between the lexical analysis phase and syntax phase in compilation process (4½ mks)**
 
-**Answer:**
-
-```
-+---------------------+     Source Code     +---------------------+     Token Stream     +---------------------+
-| Lexical Analysis    | ---------------------> | Intermediate        | ---------------------> | Syntax Analysis     |
-| (Scanner)           |                         | Activities          |                         | (Parser)            |
-+---------------------+                         +---------------------+                         +---------------------+
-     ^                                                                                                  ^
-     |                                                                                                  |
-     |                                                                                                  |
-     +---------------------------------------------------------------------------------------------------+
-                                         Symbol Table Interaction & Error Reporting
-```
-
-**Intermediate Activities between Lexical Analysis and Syntax Analysis:**
-
-1.  **Token Stream Generation:** The primary output of the lexical analysis phase is a **token stream**. This is a sequence of tokens, where each token represents a lexeme from the source code along with its token type and possibly a value (e.g., identifier name, literal value). This token stream is the *input* to the syntax analysis phase.
-
-2.  **Whitespace and Comment Removal:** Lexical analysis typically removes whitespace characters (spaces, tabs, newlines) and comments from the source code. These are generally not needed by the syntax analyzer and subsequent phases.
-
-3.  **Symbol Table Population (Initial Entries):** During lexical analysis, as identifiers are recognized, the lexical analyzer may start to populate the **symbol table**. It might enter the identifier name and basic information, like its token type (identifier). More detailed information (like type, scope, etc.) will be added in later phases, especially semantic analysis.
-
-4.  **Lexical Error Detection and Reporting:** The lexical analyzer is responsible for detecting and reporting **lexical errors**. These are errors in the basic structure of tokens, such as invalid characters, unterminated strings, or numbers that are too large. When a lexical error is detected, the lexical analyzer should report it (error message, line number) and attempt to recover, possibly by skipping erroneous characters or trying to guess the intended token.
-
-5.  **Passing Token Attributes:** Along with the token type, the lexical analyzer may pass additional attributes to the syntax analyzer. For example, for an `IDENTIFIER` token, it might pass the actual identifier name (string). For a `NUMBER` token, it might pass the numerical value. These attributes are stored with the tokens in the token stream and are used by the parser.
-
-6.  **Line Number Tracking:** The lexical analyzer keeps track of line numbers in the source code. This is crucial for error reporting in subsequent phases. When an error is detected in syntax or semantic analysis, the error message can include the line number where the error occurred, making it easier for the programmer to locate the error in the source code.
-
-In summary, the activities between lexical analysis and syntax analysis are primarily focused on preparing the token stream, handling basic errors, and setting up the initial symbol table, thus bridging the gap for the syntax analyzer to effectively process the program's structure.
+![alt text](image-2.png)
 
 **(b) Construct Parse Tree (5 mks)**
 
@@ -74,63 +35,7 @@ Since the grammar is ambiguous, let's assume standard operator precedence (* > +
 
 **(ii) S → SS* | ss+ | a for input string `ssa*`**
 
-It seems there might be a typo and `ss+` should be `ss` or `s+`. Assuming it's `SS*` and `a`, and input is meant to be derived using these.  Maybe input is `aa*` or `ass*` or `ssaa*`. Let's assume the rules are `S → SS* | a` and try to parse `aa*`. Still not making sense to derive 'a' then '*'.  Perhaps grammar is meant to be `S → SS* | a` and input is just `aa`.
-
-Let's assume rules are `S → SS* | a` and we want to parse `aa*`. Still not directly applicable.
-
-Let's reconsider the rules: `S → SS* | ss+ | a`.  Maybe `ss+` is supposed to mean "one or more 's's". If it's `ss+` as a literal, it's also unusual. If it's regular expression in grammar, it's not CFG anymore.
-
-Let's assume rules are typo and should be: `S → SS | S* | a` or `S → SS | S+ | a`.  None of these perfectly fit to derive something with 's' and '*'.
-
-Given the rules as written: `S → SS* | ss+ | a`, and trying to parse something like `ssa*` or `ass*`.  Let's try to parse something simpler, like just `a`.
-
-Parse tree for `a`:
-
-```
-  S
-  |
-  a
-```
-
-Parse tree for `ss+` (assuming 'ss+' is a terminal symbol - which is unlikely in CFG context. Maybe it is intended to be two terminals 's', 's', and '+' as a separate token?): If 'ss+' is a terminal symbol, then:
-
-```
-  S
-  |
-  ss+
-```
-
-If we assume `ss+` is a typo and meant to be `s s` (two 's' terminals) or `s+` as regular expression part (again, unusual in CFG rule directly).
-
-Let's assume the rules intended are simpler, and `ss+` is meant to be just `s` and `SS*` is meant to be `SS`.  Then rules are `S → SS | S* | a`. Still `S*` is problematic in CFG rules.
-
-**Given the ambiguity and potential typos, I will proceed with the assumption that the grammar (ii) might have errors in its intended form. If we consider the rules as literally given, and treat 'ss+' and 'SS*' as terminal symbols, then parse trees become trivial if input matches a rule directly.**
-
-If we assume input string meant for (ii) is just `a`, then parse tree is just:
-
-```
-  S
-  |
-  a
-```
-
-If we assume input string is `ss+` (and treat 'ss+' as a token), then parse tree is:
-
-```
-  S
-  |
-  ss+
-```
-
-If we assume input string is `SS*` (and treat 'SS*' as a token), then parse tree is:
-
-```
-  S
-  |
-  SS*
-```
-
-**Without clarification on the intended meaning of `ss+` and `SS*` in the grammar and the expected input string, providing a meaningful parse tree for grammar (ii) and a typical input string becomes challenging.  If we interpret `SS*` and `ss+` as grammar rules composed of terminals and non-terminals (which is more likely for CFG), then the given rules are incomplete or unclear for typical derivations.**
+It seems there might be a typo
 
 **(c) Write short notes on the following Specifications of Tokens: (i) Alphabets (ii) Strings (iii) Special Symbols (iv) Language (6 mks)**
 
@@ -652,5 +557,3 @@ id    id  id
 **For `id + id - id` with standard left-associativity for + and -, the most natural parse tree is Parse Tree 1, representing `(id + id) - id`. However, due to the grammar structure `E → E + E | E - E | E * E | id`, it is still possible to construct other parse trees that might interpret the associativity or precedence differently if we are not strict about left-associativity for same-precedence operators.**
 
 **Considering standard left-associativity for + and - and precedence rules, Parse Tree 1 is the primarily intended one. However, the grammar itself is still inherently ambiguous, allowing for different parse structures if associativity and precedence are interpreted differently.**
-
-This completes the detailed solutions for the third set of past questions. Let me know if you have any further questions or need any clarifications!
