@@ -111,8 +111,6 @@ It's a **gross oversimplification** to categorize whistle-blowers as either "sai
     *   **Government and NGO Initiatives:** Governments and non-governmental organizations can provide subsidies, educational programs, and infrastructure to improve access to legitimate software and technology skills in developing countries.
     *   **Educational Licensing:**  Software companies often offer discounted or free licenses for educational institutions, which can help students and educators access software legally.
 
-**Why high prices contribute to piracy (but don't justify it):**  High prices make software unaffordable for many individuals and businesses in developing countries where incomes are lower. This creates a strong temptation for piracy, especially when software is readily available through illegal channels.  However, this is a problem of access and affordability, not justification for illegal activity.  The solution lies in making software more accessible and affordable legally, not in condoning piracy.
-
 **4. a. Define telecommuting [2 marks]**
 
 **Telecommuting**, also known as remote work or telework, is a work arrangement where employees work from a location outside of the traditional office environment, typically their home, and communicate with their workplace and colleagues using technology such as computers, internet, and phones.
@@ -168,8 +166,6 @@ Telecommuting has significant social implications, both positive and negative:
     *   **Social Exclusion:**  It leads to social exclusion by limiting participation in online communities, access to information, and civic engagement.
     *   **Educational Disparities:**  It creates educational disparities as students without internet access at home are disadvantaged in an increasingly digital learning environment.
     *   **Health Disparities:**  It limits access to online health information and telehealth services, particularly impacting vulnerable populations.
-
-**Conclusion:** While technology is rapidly advancing, the benefits are not evenly distributed.  The digital divide continues to create and reinforce social and economic inequalities.  Bridging this divide requires ongoing efforts to improve access, affordability, digital literacy, and inclusive technology design to ensure that everyone can participate in the digital age.
 
 **5. b. State four differences between law and ethics [4 marks]**
 
