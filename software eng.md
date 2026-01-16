@@ -19,27 +19,16 @@ To construct a decision table, we need to identify the conditions and actions ba
 
 **Decision Table:**
 
-| Condition                                   | Rule 1 | Rule 2 | Rule 3 | Rule 4 | Rule 5 | Rule 6 | Rule 7 | Rule 8 |
-| :------------------------------------------ | :----- | :----- | :----- | :----- | :----- | :----- | :----- | :----- |
-| **Existing Customer?**                      | Y      | Y      | Y      | Y      | N      | N      | N      | N      |
-| **Payment Method: Cash?**                   | Y      | Y      | N      | N      | Y      | Y      | N      | N      |
-| **Sale Value Over #1000?**                   | Y      | N      | Y      | N      | Y      | N      | Y      | N      |
+| Condition                                   | Rule 1 | Rule 2 | Rule 3 | Rule 4 | Rule 5 | Rule 6 | Rule 7 |
+| :------------------------------------------ | :----- | :----- | :----- | :----- | :----- | :----- | :----- |
+| **Existing Customer?**                      | Y      | Y      | Y      | N      | N      | N      | N      |
+| **Payment Method: Cash?**                   | Y      | Y      | N      | Y      | Y      | N      | N      |
+| **Sale Value Over #1000?**                   | Y      | N      | N      | Y      | N      | Y      | N      |
 | **Actions:**                                  |        |        |        |        |        |        |        |        |
-| Apply 5% discount                         |        | X      |        | X      |        |        |        |        |
-| Apply 10% discount                        |        |        | X      |        |        |        |        |        |
-| Apply 15% discount                        | X      |        |        |        |        |        |        |        |
-| Apply No discount                         |        |        |        |        | X      | X      | X      | X      |
-
-**Explanation of Rules:**
-
-*   **Rule 1:** Existing customer, pays cash, sale over #1000 -> 15% discount. (Rule iii)
-*   **Rule 2:** Existing customer, pays cash, sale not over #1000 -> 5% discount. (Rule i)
-*   **Rule 3:** Existing customer, pays credit, sale over #1000 -> 10% discount. (Rule ii)
-*   **Rule 4:** Existing customer, pays credit, sale not over #1000 -> 5% discount. (Rule i)
-*   **Rule 5:** New customer, pays cash, sale over #1000 -> No discount. (Rule iv)
-*   **Rule 6:** New customer, pays cash, sale not over #1000 -> No discount. (Rule iv)
-*   **Rule 7:** New customer, pays credit, sale over #1000 -> No discount. (Rule iv)
-*   **Rule 8:** New customer, pays credit, sale not over #1000 -> No discount. (Rule iv)
+| Apply 5% discount                         |        |        | X      |        |        |        |        |
+| Apply 10% discount                        |        | X      |        |        |        |        |        |
+| Apply 15% discount                        | X      |        |        |        |        |        |        |
+| Apply No discount                         |        |        |        | X      | X      | X      | X      |
 
 **(b) Concepts of Software Implementation (4 marks)**
 
