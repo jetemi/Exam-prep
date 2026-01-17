@@ -1,211 +1,259 @@
-Here's a breakdown of the past questions, addressing each part:
+Here's a breakdown of the past questions:
 
 **Question 1**
 
-*   **a.** Convert the binary number 1000100111000011 to hexadecimal and octal.
-    *   **Hexadecimal:** Divide the binary number into groups of 4 bits from right to left: `1000 1001 1100 0011`. Convert each group to its hexadecimal equivalent: `8 9 C 3`. The hexadecimal representation is `89C3`.
-    *   **Octal:** Divide the binary number into groups of 3 bits from right to left: `10 001 001 110 000 11`. Convert each group to its octal equivalent: `2 1 1 6 0 3`. The octal representation is `211603`.
-*   **b.** Using parity coding, convert 67 (base 10) to odd parity.
-    *   First, convert 67 to binary: `01000011`. Since we are using a word length of 1 byte, we'll represent it with 8 bits.
-    *   **Odd Parity:** Count the number of 1s in the binary representation (`01000011`). There are two 1s. For odd parity, we need an odd number of 1s. Therefore, we will add a parity bit of '1' to the beginning. The result becomes: `101000011`.
-*   **c.** Given matrix A = \[1 2 3; 5 1 4; 3 2 1], X = A(1,:), Y = A(3,:). Find X.\*Y.
-    *   `X = A(1,:)` means X is the first row of A: `[1 2 3]`.
-    *   `Y = A(3,:)` means Y is the third row of A: `[3 2 1]`.
-    *   `X.*Y` represents element-wise multiplication (Hadamard product): `[1\*3, 2\*2, 3\*1] = [3 4 3]`.
-*   **d.** Use the graphical method to solve the system of equations.
-    *   x1 - 3x2 = 5
-    *   2x1 - 6x2 = 7
-    *   Isolate x2 for each equation
-        *   x2 = (x1 - 5) / 3
-        *   x2 = (2x1 - 7) / 6
-    *   To sketch the lines, find some points for each equation
-        *   for x2 = (x1 - 5) / 3
-            *   when x1= 2, x2 = -1
-            *   when x1 = 5, x2 = 0
-        *   for x2 = (2x1 - 7) / 6
-            *   when x1= 2, x2 = -1/6
-            *   when x1 = 5, x2 = 1/2
-    *   Plot the lines.  If they intersect, that's your approximate solution. Because of the nature of the equations, they are parallel lines so the graphical method will not provide an answer. In this case, you can state no solution.
-*   **e.** Solve the system of equations using Gauss Elimination with pivoting.
-    *   6x1 - 2x2 + 2x3 + 4x4 = 16
-    *   12x1 - 8x2 + 6x3 + 10x4 = 26
-    *   3x1 - 13x2 + 9x3 + 3x4 = -19
-    *   -6x1 + 4x2 + x3 - 18x4 = -34
-
-    *   **Pivoting:**  This involves rearranging the equations to have the largest coefficient (in absolute value) for the variable you're eliminating at each step.
-    *   **Step 1:**  Identify the largest coefficient for x1 (it's 12 in the second equation). Swap equation 1 and 2 to have this equation in the first position.
-        *   12x1 - 8x2 + 6x3 + 10x4 = 26
-        *   6x1 - 2x2 + 2x3 + 4x4 = 16
-        *   3x1 - 13x2 + 9x3 + 3x4 = -19
-        *   -6x1 + 4x2 + x3 - 18x4 = -34
-    *   **Step 2:** Eliminate x1 from equations 2, 3, and 4
-        *   Divide equation 1 by 12:  x1 - (2/3)x2 + (1/2)x3 + (5/6)x4 = 13/6
-        *   Equation 2:  Equation 2 - 6 \* Equation 1 :  -6x2 - x3 - x4 = -10
-        *   Equation 3: Equation 3 - 3 \* Equation 1 : -11x2 + (15/2)x3 - (3/2)x4 = -77/2
-        *   Equation 4: Equation 4 - (-6) \* Equation 1:  0x2 + 2x3 - 13x4 = -21
-    *   **Step 3:** Divide second equation by -6: x2 + (1/6)x3 + (1/6)x4 = 5/3
-    *   **Step 4:** Eliminate x2 from equation 3: equation 3 - (-11) \* equation 2 : (28/3)x3 + (4/3)x4 = -101/6
-    *   **Step 5:** Eliminate x2 from equation 4: equation 4 - 0 \* equation 2: 2x3 - 13x4 = -21
-    *   **Step 6:** Divide equation 3 by 28/3:  x3 + (1/7)x4 = -101/56
-    *   **Step 7:** Eliminate x3 from equation 4: equation 4 - 2 \* equation 3: -93/7x4 = -277/28
-    *   **Step 8:** Solve for x4: x4 = 277/372
-    *   **Step 9:** Solve for x3: x3 = -101/56 - (1/7)(277/372) = -6409/2604
-    *   **Step 10:** Solve for x2: x2 = 5/3 - (1/6)(-6409/2604) - (1/6)(277/372) = 17563/15624
-    *   **Step 11:** Solve for x1: x1 = 13/6 + (2/3)(17563/15624) - (1/2)(-6409/2604) - (5/6)(277/372) = 171887/93744
+*   **a.** Two lengths X and Y are measured to be approximately X ~ 3.32 and Y ~ 5.39, the symbol ~ representing approximate equality. Compute approximations to X + Y, X + (.1)Y and X + (.01)Y by "three digit addition".
+    *   **X + Y:** 3.32 + 5.39 = 8.71
+    *   **X + (0.1)Y:** 3.32 + (0.1)(5.39) = 3.32 + 0.539 = 3.859  (Rounded to 3 digits: 3.86)
+    *   **X + (0.01)Y:** 3.32 + (0.01)(5.39) = 3.32 + 0.0539 = 3.3739 (Rounded to 3 digits: 3.37)
+*   **b.** What is the largest non-negative integer that stores integers as unsigned bit words.
+    *   For an unsigned bit word, you need the number of bits. You can calculate the maximum value the bit word can hold with the following formula 2^n -1, where n is the number of bits.
+    *   In the absence of a specification, this cannot be calculated
+*   **c.** Differentiate between absolute and relative error.
+    *   **Absolute Error:** The difference between the approximate value and the true value. It has the same units as the quantity being measured.
+        *   Formula: |Approximate Value - True Value|
+    *   **Relative Error:** The absolute error divided by the true value. It is usually expressed as a percentage and provides a better sense of the error's significance.
+        *   Formula: |Approximate Value - True Value| / |True Value|
+*   **d.** The relative error in an approximate solution is 0.004%. What is the number of significant digits in the solution that can be trusted?
+    *   To determine the number of significant digits that can be trusted, use this formula
+    *   number of correct significant digits = -log10 (relative error)
+    *   number of correct significant digits = -log10(0.00004) = -(-4.397) = 4.397
+    *   Therefore, the solution can have 4 significant digits that can be trusted
+*   **e.** What is the decimal equivalent of the binary number 110010₂?
+    *   110010₂ = (1 \* 2⁵) + (1 \* 2⁴) + (0 \* 2³) + (0 \* 2²) + (1 \* 2¹) + (0 \* 2⁰)
+    *   = 32 + 16 + 0 + 0 + 2 + 0
+    *   = 50₁₀
+*   **f.** What is the binary equivalent of the decimal number 25.375₁₀?
+    *   **Integer Part (25):** Convert to binary.
+        *   25 / 2 = 12 remainder 1
+        *   12 / 2 = 6 remainder 0
+        *   6 / 2 = 3 remainder 0
+        *   3 / 2 = 1 remainder 1
+        *   1 / 2 = 0 remainder 1
+        *   Read from bottom up: 11001
+    *   **Fractional Part (0.375):** Convert to binary
+        *   0.375 \* 2 = 0.75 (0)
+        *   0.75 \* 2 = 1.5 (1)
+        *   0.5 \* 2 = 1.0 (1)
+        *   Read from top to bottom: 0.011
+    *   Therefore, 25.375₁₀ = 11001.011₂
+*   **g.** Using the Taylor series expansion of f(x) = cos(x) near x = 0, find an approximation of f(h) for small h
+    *   Taylor Series Expansion formula: f(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)²/2! + ...
+    *   f(x) = cos(x) and a = 0
+    *   f(0) = cos(0) = 1
+    *   f'(x) = -sin(x)  => f'(0) = -sin(0) = 0
+    *   f''(x) = -cos(x) => f''(0) = -cos(0) = -1
+    *   f'''(x) = sin(x) => f'''(0) = sin(0) = 0
+    *   f(x) = 1 + 0*(x-0) + (-1)(x-0)²/2! + 0*(x-0)³/3! + ...
+    *   f(x) ≈ 1 - x²/2
+    *   To find an approximation of f(h)
+    *   f(h) ≈ 1 - h²/2
+*   **h.** Given that f(2) = 6, f'(2) = -½ and f''(2) = 10, what is the most accurate Taylor polynomial approximation of f(2:2) that you can find?
+    *   Here x = 2:2, which means x=2, a=2
+    *   Taylor polynomial = f(a) + f'(a)(x-a) + f''(a)(x-a)²/2! + ...
+    *   f(2) = 6
+    *   f'(2) = -1/2
+    *   f''(2) = 10
+    *   Taylor polynomial ≈ 6 + (-1/2)(x-2) + (10(x-2)²)/2!
+    *   Taylor polynomial ≈ 6 - 0.5(x-2) + 5(x-2)²
+*   **i.** You are given a matrix u of size 4 x 1, u = \[2;1;1;1], and a second matrix v = \[0.5;1;0;0]. We now perform the matrix-matrix product w = u(vᵀ), where T denotes transpose.
+    *   i. What is the size of matrix w?
+    *   u is 4x1 and v is 4x1
+    *   vᵀ is 1x4
+    *   u * vᵀ  will result in a matrix of size 4x4
+    *   ii. What is the value of w(1,1)?
+    *   w = u \* vᵀ
+    *   First column of w: \[2;1;1;1] \* 0.5 = \[1;0.5;0.5;0.5]
+    *   w(1,1) = 1
+*   **j.** Differentiate between order of an ODE and linearity of an ODE. Give examples
+    *   **Order of an ODE:** The order is determined by the highest derivative present in the equation.
+        *   Example: y'' + 2y' + y = 0  (Second-order ODE)
+    *   **Linearity of an ODE:** An ODE is linear if:
+        *   The dependent variable (and its derivatives) appear only to the first power.
+        *   No products of the dependent variable and its derivatives.
+        *   No non-linear functions of the dependent variable or its derivatives (e.g., sin(y), y²).
+        *   Example (Linear): y'' + 2y' + y = 0
+        *   Example (Non-linear): y'' + y² = 0
 
 **Question 2**
 
-*   **a.** Pseudocode for forward elimination and backward substitution in Naive Gauss Elimination.
-    *   **Forward Elimination:** This part reduces the system to an upper triangular form.  We'll use a nested loop structure.
-
-        ```
-        function forwardElimination(A, b)
-            n = size(A, 1) // Number of rows (equations)
-            for k = 1 to n-1 // Iterate through columns (variables to eliminate)
-                for i = k+1 to n // Iterate through rows below the current one
-                    factor = A[i, k] / A[k, k] // Calculate the factor
-                    for j = k to n // Iterate through the columns to update
-                        A[i, j] = A[i, j] - factor * A[k, j] // Eliminate the variable
-                    b[i] = b[i] - factor * b[k] // Update the b vector
-                end for
-            end for
-            return A, b // Return the modified matrix and vector
-        end function
-        ```
-
-    *   **Backward Substitution:** This part solves for the variables, starting from the last one.
-
-        ```
-        function backwardSubstitution(A, b)
-            n = size(A, 1)
-            x = zeros(n, 1) // Initialize the solution vector
-            x[n] = b[n] / A[n, n] // Solve for the last variable
-            for i = n-1 down to 1 // Iterate backwards through the equations
-                sum = 0
-                for j = i+1 to n
-                    sum = sum + A[i, j] * x[j] // Calculate the sum of known terms
-                end for
-                x[i] = (b[i] - sum) / A[i, i] // Solve for the current variable
-            end for
-            return x // Return the solution vector
-        end function
-        ```
-
-*   **b.** Solve the system using Naive Gauss Elimination.
-
-    *   6x1 - 2x2 + 2x3 + 4x4 = 16
-    *   12x1 - 8x2 + 6x3 + 10x4 = 26
-    *   3x1 - 13x2 + 9x3 + 3x4 = -19
-    *   -6x1 + 4x2 + x3 - 18x4 = -34
-    *   Follow the forward elimination and then backward substitution procedures, but without pivoting.
-
-    *   **Step 1: Eliminate x1 from equations 2, 3, and 4:**
-        *   Equation 2: Equation 2 - 2 \* Equation 1: -4x2 + 2x3 + 2x4 = -6
-        *   Equation 3: Equation 3 - (1/2) \* Equation 1: -12x2 + 8x3 + x4 = -27
-        *   Equation 4: Equation 4 + Equation 1: 2x2 + 3x3 - 14x4 = -18
-    *   **Step 2: Eliminate x2 from equations 3 and 4**
-        *   Equation 3: Equation 3 - 3 \* Equation 2: 2x3 - 5x4 = -9
-        *   Equation 4: Equation 4 + (1/2) \* Equation 2: 4x3 - 13x4 = -21
-    *   **Step 3: Eliminate x3 from equation 4**
-        *   Equation 4: Equation 4 - Equation 3: -3x4 = -3
-        *   Therefore, x4 = 1.
-    *   **Step 4: Solve for x3:**
-        *   2x3 - 5(1) = -9  => 2x3 = -4 => x3 = -2
-    *   **Step 5: Solve for x2**
-        *   -4x2 + 2(-2) + 2(1) = -6 => -4x2 = -6 + 4 - 2 => -4x2 = -4 => x2 = 1
-    *   **Step 6: Solve for x1**
-        *   6x1 - 2(1) + 2(-2) + 4(1) = 16 => 6x1 = 16 + 2 + 4 - 4 => 6x1 = 18 => x1 = 3
+*   **a.** Find the interval in which x³ - x - 4 = 0 lies.
+    *   Let f(x) = x³ - x - 4
+    *   To find an interval, you can use the Intermediate Value Theorem. You are looking for a change in sign of f(x)
+    *   Try different values of x:
+        *   f(0) = -4
+        *   f(1) = -4
+        *   f(2) = 8 - 2 - 4 = 2
+        *   f(1.5) = 1.5³ - 1.5 - 4 = -2.125
+        *   Therefore, a root exists between 1 and 2
+*   **b.** Determine the roots correct to two decimal places using the bisection method.
+    *   *f(x) = x³ - x - 4*
+    *   *a = 1, b = 2*
+    *   **Iteration 1:**
+        *   c = (a + b) / 2 = (1 + 2) / 2 = 1.5
+        *   f(1.5) = (1.5)³ - 1.5 - 4 = -2.125 < 0.  Since f(1.5) < 0 and f(2) > 0, the root lies between 1.5 and 2.
+    *   **Iteration 2:**
+        *   a = 1.5, b = 2
+        *   c = (1.5 + 2) / 2 = 1.75
+        *   f(1.75) = (1.75)³ - 1.75 - 4 = 0.140625 > 0. Since f(1.5) < 0 and f(1.75) > 0, the root lies between 1.5 and 1.75.
+    *   **Iteration 3:**
+        *   a = 1.5, b = 1.75
+        *   c = (1.5 + 1.75) / 2 = 1.625
+        *   f(1.625) = (1.625)³ - 1.625 - 4 = -0.908203 < 0. Since f(1.625) < 0 and f(1.75) > 0, the root lies between 1.625 and 1.75.
+    *   **Iteration 4:**
+        *   a = 1.625, b = 1.75
+        *   c = (1.625 + 1.75) / 2 = 1.6875
+        *   f(1.6875) = (1.6875)³ - 1.6875 - 4 = -0.36017 < 0.  Since f(1.6875) < 0 and f(1.75) > 0, the root lies between 1.6875 and 1.75.
+    *   **Iteration 5:**
+        *   a = 1.6875, b = 1.75
+        *   c = (1.6875 + 1.75) / 2 = 1.71875
+        *   f(1.71875) = (1.71875)³ - 1.71875 - 4 = -0.106888 < 0. Since f(1.71875) < 0 and f(1.75) > 0, the root lies between 1.71875 and 1.75.
+    *   **Iteration 6:**
+        *   a = 1.71875, b = 1.75
+        *   c = (1.71875 + 1.75) / 2 = 1.734375
+        *   f(1.734375) = (1.734375)³ - 1.734375 - 4 = 0.015248 > 0
+        *   Since f(1.71875) < 0 and f(1.734375) > 0, the root lies between 1.71875 and 1.734375.
+    *   **Iteration 7:**
+        *   a = 1.71875, b = 1.734375
+        *   c = (1.71875 + 1.734375) / 2 = 1.7265625
+        *   f(1.7265625) = (1.7265625)³ - 1.7265625 - 4 = -0.046313
+        *   Since f(1.7265625) < 0 and f(1.734375) > 0, the root lies between 1.7265625 and 1.734375.
+    *   The root to two decimal places is 1.73
 
 **Question 3**
 
-*   **a.** Meanings of MATLAB commands:
-    *   `who`: Lists the variables currently in the workspace.
-    *   `whos`: Lists the variables in the workspace, along with their sizes, data types, and other information.
-    *   `what`: Lists MATLAB-specific files (e.g., .m files, .mat files) in the current directory.
-    *   `pwd`: Displays the current working directory.
-*   **b.** Solve the system of equations using the Gauss-Jordan method.
-    *   x - 2y + 3z = 9
-    *   -x + 3y = -4
-    *   2x - 5y + 5z = 17
-    *   **Step 1: Augmented Matrix**
-        *   Form the augmented matrix:  \[1 -2 3 | 9; -1 3 0 | -4; 2 -5 5 | 17]
-    *   **Step 2: Forward Elimination (Gauss Elimination steps)**
-        *   Eliminate x from the second and third rows.
-            *   Add row 1 to row 2: \[1 -2 3 | 9; 0 1 3 | 5; 2 -5 5 | 17]
-            *   Subtract 2 * row 1 from row 3: \[1 -2 3 | 9; 0 1 3 | 5; 0 -1 -1 | -1]
-        *   Eliminate y from the third row:
-            *   Add row 2 to row 3: \[1 -2 3 | 9; 0 1 3 | 5; 0 0 2 | 4]
-        *   Divide row 3 by 2: \[1 -2 3 | 9; 0 1 3 | 5; 0 0 1 | 2]
-    *   **Step 3: Back Substitution (Gauss-Jordan to reduced row echelon form)**
-        *   Eliminate z from rows 1 and 2
-            *   Subtract 3 * row 3 from row 2: \[1 -2 3 | 9; 0 1 0 | -1; 0 0 1 | 2]
-            *   Subtract 3 * row 3 from row 1: \[1 -2 0 | 3; 0 1 0 | -1; 0 0 1 | 2]
-        *   Eliminate y from row 1
-            *   Add 2 * row 2 to row 1: \[1 0 0 | 1; 0 1 0 | -1; 0 0 1 | 2]
-    *   **Step 4: Solution**
-        *   From the final matrix:
-            *   x = 1
-            *   y = -1
-            *   z = 2
+*   **a.** State the Newton-Raphson method.
+    *   The Newton-Raphson method is an iterative method for finding the roots (zeros) of a real-valued function.  It uses the tangent line at a current guess to find a better approximation of the root.
+    *   Formula: `x_(n+1) = x_n - f(x_n) / f'(x_n)`
+    *   Where:
+        *   x_(n+1) is the next approximation of the root.
+        *   x_n is the current approximation of the root.
+        *   f(x_n) is the value of the function at x_n.
+        *   f'(x_n) is the value of the derivative of the function at x_n.
+*   **b.** What are the assumptions often made? Find the iterative methods based on the Newton-Raphson method for finding √N, where N is a positive real number. Apply the methods to N = 18 to obtain the results correct to two decimal places.
+    *   **Assumptions for Newton-Raphson:**
+        *   The function f(x) must be differentiable.  The derivative, f'(x), must exist.
+        *   The initial guess, x₀, must be "close enough" to the actual root for the method to converge.
+        *   The derivative, f'(x), should not be zero (or close to zero) near the root, as this would cause division by zero.
+    *   **Finding √N using Newton-Raphson:**
+        *   We want to find the root of the equation x² - N = 0
+        *   f(x) = x² - N
+        *   f'(x) = 2x
+        *   Newton-Raphson formula: x_(n+1) = x_n - (x_n² - N) / (2x_n)
+        *   Simplifying: x_(n+1) = (x_n + N/x_n) / 2
+    *   **Applying to N = 18:**
+        *   x_(n+1) = (x_n + 18/x_n) / 2
+        *   Start with an initial guess, x₀.  Let's start with x₀ = 4.
+        *   **Iteration 1:**
+            *   x₁ = (4 + 18/4) / 2 = 4.25
+        *   **Iteration 2:**
+            *   x₂ = (4.25 + 18/4.25) / 2 ≈ 4.242647
+        *   **Iteration 3:**
+            *   x₃ = (4.242647 + 18/4.242647) / 2 ≈ 4.242641
+        *   Iteration 4:
+            *   x₄ = (4.242641 + 18/4.242641) / 2 ≈ 4.242641
+        *   √18 ≈ 4.24 (to two decimal places)
 
 **Question 4**
 
-*   **4a.** Differentiate between Riemann Sums and Trapezoidal Sum for solving integral equations.
-    *   **Riemann Sums:**  Approximates the definite integral by dividing the area under the curve into rectangles.
-        *   **Left Riemann Sum:** Rectangles have heights determined by the function value at the *left* endpoint of each subinterval.
-        *   **Right Riemann Sum:** Rectangles have heights determined by the function value at the *right* endpoint of each subinterval.
-        *   **Midpoint Riemann Sum:** Rectangles have heights determined by the function value at the *midpoint* of each subinterval.
-        *   *General Formula:*  `∫[a, b] f(x) dx ≈ Σ f(xi) * Δx`  (sum of function values at sample points times the width of each subinterval)
-    *   **Trapezoidal Rule:** Approximates the definite integral by dividing the area under the curve into trapezoids.
-        *   *Formula:* `∫[a, b] f(x) dx ≈ (Δx / 2) \* [f(x0) + 2f(x1) + 2f(x2) + ... + 2f(xn-1) + f(xn)]` where Δx = (b-a)/n.
-        *   The trapezoidal rule is usually more accurate than the Riemann Sums (especially with the same number of intervals) because it better approximates the curve's shape by using trapezoids instead of just rectangles.
-        *   For the trapezoidal sum, the area is the sum of the area of the trapezoids.
-
-*   **4b.** Solve the differential equation  dy/dx = -y + 2cos(x), y(0) = 1  using Simpson's rule.
-    *   Simpson's rule is designed for numerically approximating definite *integrals*, not directly solving differential equations.  To solve a differential equation numerically, you will likely use a method such as Euler's method, Runge-Kutta, or a similar algorithm.  There are numerical techniques that apply Simpson's rule to definite integrals, but not for differential equations.  We are going to make a few assumptions to use Simpson's rule. First we need to get the y value, and we are going to assume that this applies to one time step.
-    *   **Step 1. Determine Step Size and Interval** We are going to assume a step size of h = 0.1, and interval is 0 to 0.1.
-    *   **Step 2: Prepare the Values.**
-        *   Initial condition: x0 = 0, y(0) = 1
-        *   We need to know y at x0. Then we can use the formula to find y(x1)
-        *   y'(x) = f(x, y) = -y + 2cos(x)
-        *   We will want to calculate y'(0)
-            *   y'(0) = -1 + 2cos(0) = -1 + 2(1) = 1
-    *   **Step 3. Apply Simpson's 1/3 Rule.**  Simpson's 1/3 rule (for a single step, since we have only 2 points)
-
-        *  y(x1) ≈ y(x0) + (h/3) \* \[y'(x0) + 4y'(x1/2) + y'(x1)]
-        *  To use this form, we need to apply the derivative equation.
-        *  we know x0, y(x0), h, so we need to find y'(x0), y'(x1), y'(x1/2)
-        *  Find x1/2
-            *   x1/2 = 0 + (0.1/2) = 0.05
-        *   y'(0.05) = -y(0.05) + 2cos(0.05)
-            *   We approximate y(0.05) ≈ y(0) + (0.05) * y'(0) = 1 + (0.05) \* 1 = 1.05
-            *   y'(0.05) ≈ -1.05 + 2cos(0.05) = 0.95995
-        *   Find x1
-            *   x1 = 0 + 0.1 = 0.1
-        *   y'(x1) ≈ -y(x1) + 2cos(x1)
-            *   We approximate y(0.1) ≈ y(0) + (0.1) \* y'(0) = 1 + (0.1) \* 1 = 1.1
-            *   y'(0.1) ≈ -1.1 + 2cos(0.1) = 0.90996
-        *  y(x1) ≈ 1 + (0.1/3) \* \[1 + 4(0.95995) + 0.90996]
-        *  y(0.1) ≈ 1 + 0.1 \* (1 + 3.8398 + 0.90996)/3
-        *  y(0.1) ≈ 1 + 0.191658
-        *  y(0.1) ≈ 1.191658
+*   **a.** Highlight any three (3) methods of solutions to ODE problems
+    *   Euler's Method (covered in the previous example)
+    *   Runge-Kutta Methods (various orders, more accurate than Euler's)
+    *   Taylor Series Method
+    *   Finite Difference Methods
+    *   Finite Element Methods
+    *   Variation of Parameters
+*   **b.** Use Euler method to solve the ODE: f(x,y) = 1 + x², x₀ = 1, y₀ = -4, h=0.01.
+    *   From Euler's method,  `y_(i+1) = y_i + h \* f(x_i, y_i)`
+    *   We want to find y(x) given x = 1 and 1 step to x=1.01 with a step size of 0.01
+    *   x₀ = 1, y₀ = -4, h = 0.01
+    *   f(x, y) = 1 + x²
+    *   **Iteration 1:**
+        *   y₁ = y₀ + h \* f(x₀, y₀)
+        *   y₁ = -4 + 0.01 \* (1 + 1²)
+        *   y₁ = -4 + 0.01 \* 2
+        *   y₁ = -3.98
 
 **Question 5**
 
-*   **5a.** Given matrix A = \[2 5 3; 5 0 4; 3 2 6], X = A(:,1), Y = A(:,3). Find X.\*Y.
-    *   `X = A(:,1)` means X is the first column of A: `[2; 5; 3]`.
-    *   `Y = A(:,3)` means Y is the third column of A: `[3; 4; 6]`.
-    *   `X.\*Y` represents element-wise multiplication: `[2\*3; 5\*4; 3\*6] = [6; 20; 18]`.
-*   **5b.** Solve the problem  y'(x) = -y(x) + 2cos(x), y(0) = 1 using Euler's method.
-    *   **Euler's Method:** A simple numerical method for approximating the solution of a differential equation. The formula is:  `y(x + h) ≈ y(x) + h * f(x, y)`.
-        *   h = step size
-    *   **Step 1: Determine the step size, h:** Let's say we want to estimate y(x) at x = 0.1 with step size of 0.1.
-    *   **Step 2: Apply the formula, one step at a time:**
-        *   We have:  y'(x) = -y(x) + 2cos(x)
-        *   We know x0 = 0 and y(0) = 1.
-        *   Using the Euler's method formula, with h = 0.1:
-        *   y(0.1) ≈ y(0) + 0.1 \* f(0, y(0))
-        *   f(x, y) = -y + 2cos(x)  =>  f(0, 1) = -1 + 2\*cos(0) = -1 + 2 = 1.
-        *   y(0.1) ≈ 1 + 0.1 \* (1) = 1.1
-        *   Therefore, after one step, the estimated value of y at x=0.1 is approximately 1.1.
+*   **a.** Find the roots of f(x) = x⁵ + x³ + 3, with initial points x₀ = -1 and x₁ = -1.1 using secant method with error < 0.001
+    *   **Secant Method Formula:**  x_(n+1) = x_n - f(x_n) \* (x_n - x_(n-1)) / (f(x_n) - f(x_(n-1)))
+    *   f(x) = x⁵ + x³ + 3
+    *   f'(x) = 5x⁴ + 3x²
+    *   x₀ = -1, x₁ = -1.1
+    *   **Iteration 1:**
+        *   f(x₀) = f(-1) = (-1)⁵ + (-1)³ + 3 = 1
+        *   f(x₁) = f(-1.1) = (-1.1)⁵ + (-1.1)³ + 3 = -0.061
+        *   x₂ = x₁ - f(x₁) \* (x₁ - x₀) / (f(x₁) - f(x₀))
+        *   x₂ = -1.1 - (-0.061) * (-1.1 - (-1)) / (-0.061 - 1)
+        *   x₂ = -1.1 + 0.061 * 0.1 / 1.061 = -1.1 - .00057
+        *   x₂ = -1.09943 (Error = |-1.1 - (-1.09943)| = .00057
+    *   **Iteration 2:**
+        *   f(x₂) = f(-1.09943) =  (-1.09943)⁵ + (-1.09943)³ + 3 = -0.00000002871
+        *   x₃ = x₂ - f(x₂) \* (x₂ - x₁) / (f(x₂) - f(x₁))
+        *   x₃ = -1.09943 - (0) * (-1.09943 - (-1.1)) / (0 - (-0.061)) = -1.09943
+        *   Error is very small, we can assume this answer is correct
 
+*   **b.** What differentiate secant method from Newton's method?
+    *   **Secant Method:**
+        *   Approximates the derivative, f'(x), using a difference quotient. (uses the slope of a secant line).
+        *   Requires *two* initial guesses, x₀ and x₁.
+        *   Generally slower convergence rate than Newton's method, but faster than Bisection.
+        *   Does not require the evaluation of the derivative.
+    *   **Newton's Method:**
+        *   Uses the derivative, f'(x), directly. (uses the tangent line)
+        *   Requires *one* initial guess, x₀.
+        *   Generally faster convergence (when it converges) than the secant method (quadratic convergence).
+        *   Requires the evaluation of the derivative at each iteration.
+
+**Question 6**
+
+*   **Use Cramer's rule to solve**
+    *   x₁ + x₂ = 3; x₁ + 2x₂ = 5
+    *   **Cramer's Rule** is a method for solving systems of linear equations using determinants.
+    *   Write the system of equations in matrix form, i.e.
+        *   \[1 1; 1 2] \[x1;x2] = \[3;5]
+    *   Find the determinant of the coefficient matrix (A):
+        *   det(A) = (1 \* 2) - (1 \* 1) = 1
+    *   Replace the first column of the coefficient matrix (A) with the constant vector to find A1
+        *   \[3 1; 5 2]
+        *   det(A1) = (3 \* 2) - (1 \* 5) = 1
+    *   Replace the second column of the coefficient matrix (A) with the constant vector to find A2
+        *   \[1 3; 1 5]
+        *   det(A2) = (1 \* 5) - (3 \* 1) = 2
+    *   Calculate the values of the variables:
+        *   x1 = det(A1)/det(A) = 1/1 = 1
+        *   x2 = det(A2)/det(A) = 2/1 = 2
+    *   Solution: x₁ = 1, x₂ = 2
+
+*   **Find a function of the form ae^(bx) that best fits the data below:**
+
+| x | 1   | 2   | 3   |
+|---|- ---|- ---|- ---|
+| y | 2.4 | 5   | 9   |
+
+    *   To solve this problem we can linearize the function: y = ae^(bx)
+    *   Take the natural log of each side, ln(y) = ln(a) + bx
+    *   Let z = ln(y), A = ln(a)
+    *   Now the function can be represented as z = A + bx.
+    *   Make a table
+
+| x | 1    | 2    | 3     |
+|---|- ----|- ----|- -----|
+| y | 2.4  | 5    | 9     |
+| z | .875 | 1.61 | 2.197 |
+
+    *   There are 3 points, so we can solve for A and B.
+
+        *   0.875 = A + B
+        *   1.61 = A + 2B
+        *   2.197 = A + 3B
+    *   1.61 - 0.875 = B
+    *   B = 0.735
+    *   0.875 = A + 0.735
+    *   A = 0.14
+    *   Therefore,
+        *   b = 0.735
+        *   ln(a) = 0.14
+        *   a = e^0.14 = 1.15
+        *   **y ≈ 1.15 * e^(0.735x)**
