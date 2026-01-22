@@ -2,37 +2,22 @@
 
 **(i) What are the 3 main components of Human Computer Interaction (HCI)?** (3mks)
 
-The three main components of Human Computer Interaction (HCI) are:
-
 *   **User:**  The person who interacts with the computer system.
 *   **Computer:** The technology, ranging from desktop computers to mobile devices and beyond.
 *   **Interaction:** The process of communication and exchange between the user and the computer.
 
 **(ii) To assess the interaction between human and computers, Donald Norman in 1988 proposed seven principles that can be used to transform difficult tasks. State these principles.** (4½mks)
 
-Donald Norman's seven principles of design are:
-
-*   **Visibility:**  Making relevant parts of the system visible and easily discoverable.
-*   **Feedback:**  Providing users with clear and immediate feedback on their actions.
-*   **Constraints:**  Limiting the number of possible actions to prevent errors and guide users.
-*   **Consistency:**  Maintaining consistent design across the interface in terms of layout, terminology, and actions.
-*   **Affordance:**  Designing elements so that their purpose is clear from their appearance (e.g., buttons look pressable).
-*   **Discoverability:**  Making it easy for users to find and learn how to use different features of the system.
-*   **Mapping:**  Establishing a clear and intuitive relationship between controls and their effects in the real world.
----
-
-1. Use knowledge in the world and the knowledge in the head.
-2. Simplification of the task structure
-3. Make things visible
-4. Getting the Mapping right
-5. Convert constraint into the issue into the right solution model
-6. Constraint
-7. Plan for error
+1. **Use both knowledge in the world and knowledge in the head.**
+2. **Simplify the structure of tasks.**
+3. **Make things visible.**
+4. **Get the mappings right** between user intentions and system controls.
+5. **Exploit the power of constraints**, both natural and artificial. E.g Limiting the number of possible actions to prevent errors and guide users.
+6. **Design for error**, anticipating human mistakes.
+7. **When all else fails, standardize:** If there are no natural mappings then arbitrary mappings should be standardized so that users only have to learn them once.
 
 
 **1b Types of User Interface (10mks)**
-
-**Write short notes on the following types of user interface:**
 
 **(i) Graphical User Interface (GUI):**
 
@@ -40,6 +25,7 @@ Donald Norman's seven principles of design are:
 *   Users interact through direct manipulation using a mouse, touchpad, or touchscreen.
 *   Focuses on visual representation and ease of use.
 *   Examples: Windows, macOS, Android, iOS.
+*   Often referred to as WIMP (Windows, Icons, Menus, Pointers)
 
 **(ii) Touchscreen:**
 
@@ -52,7 +38,7 @@ Donald Norman's seven principles of design are:
 
 *   Presents users with a list of options (menus) to choose from.
 *   Interaction is based on navigating through hierarchical menus to select commands or actions.
-*   Often used in applications with a limited set of functions or in embedded systems.
+*   Often used in applications with a limited set of functions or in embedded systems, eg, ATM Machines.
 *   Can be less flexible than other interfaces but is generally easy to learn.
 
 **(iv) Command Line Interface (CLI):**
@@ -70,11 +56,7 @@ Donald Norman's seven principles of design are:
 *   Examples: Siri, Alexa, Google Assistant, chatbots in messaging apps.
 
 
-**1c HCI Design Methodologies and Factors (12½mks)**
-
-**(i) Various methodologies have materialized since the inception that outlines the techniques for Human Computer Interaction. Highlight four design methodologies commonly in use today.** (6mks)
-
-Four common HCI design methodologies are:
+**1c (i) Various methodologies have materialized since the inception that outlines the techniques for Human Computer Interaction. Highlight four design methodologies commonly in use today.** (6mks)
 
 *   **User-Centered Design (UCD):**  Focuses on understanding user needs, goals, and contexts throughout the design process. Involves user research, iterative design, and usability testing.
 *   **Task Analysis:**  Involves breaking down user tasks into smaller steps to understand how users currently perform tasks and identify areas for improvement.
@@ -82,8 +64,6 @@ Four common HCI design methodologies are:
 *   **Agile UX:**  Integrates UX design principles into agile software development methodologies. Emphasizes iterative design, rapid prototyping, and continuous user feedback within short development cycles.
 
 **(ii) There are a large number of factors which should be considered in the analysis and design of a system using HCI principles. Itemize any seven main factors that you know of.** (6½mks)
-
-Seven main factors to consider in HCI analysis and design are:
 
 *   **Usability:**  The ease of use and effectiveness of the system, including learnability, efficiency, memorability, error handling, and satisfaction.
 *   **Accessibility:**  Designing systems that are usable by people with a wide range of abilities and disabilities.
@@ -94,31 +74,23 @@ Seven main factors to consider in HCI analysis and design are:
 *   **Learnability:**  How easy it is for new users to learn to use the system effectively.
 
 
-**2a Shneiderman's 8 Golden Rules (6mks)**
+**2a(i) What essential characteristics of good design are often summarized through Shneiderman's 8 Golden Rules that help interface designers? (6mks)**
 
-**(i) What essential characteristics of good design are often summarized through Shneiderman's 8 Golden Rules that help interface designers?**
-
-Shneiderman's 8 Golden Rules of Interface Design are:
-
-*   **Strive for consistency:**  Use consistent terminology, layout, and actions throughout the interface.
-*   **Seek universal usability:** Design for diverse users, including beginners and experts, and accommodate different needs and preferences.
-*   **Offer informative feedback:** Provide users with clear and timely feedback on their actions and system status.
-*   **Design dialogs to yield closure:** Structure interactions in a clear sequence with a defined beginning, middle, and end, providing a sense of accomplishment.
-*   **Prevent errors:** Design the interface to minimize errors and provide helpful error messages when they occur.
-*   **Permit easy reversal of actions:** Allow users to easily undo actions to encourage exploration and reduce anxiety.
-*   **Keep users in control:**  Give users a sense of control and avoid forcing them into unwanted actions.
-*   **Reduce short-term memory load:** Minimize the amount of information users need to remember while using the system.
+1.   **Strive for consistency**
+2.   **Enable frequent users to use shortcuts** 
+3.   **Offer informative feedback**
+4.   **Design dialogs to yield closure**
+5.   **Offer error prevention and simple error handling**
+6.   **Permit easy reversal of actions**
+7.   **Support internal locus of control**
+8.   **Reduce short-term memory load**
 
 
-**2b Keyboard vs. Speech Input and HCI Design Guidelines (14mks)**
+**2b (ii) Describe three situations in which keyboard input might be preferred over speech for data entry.** (5mks)
 
-**(ii) Describe three situations in which keyboard input might be preferred over speech for data entry.** (5mks)
-
-Three situations where keyboard input might be preferred over speech:
-
-*   **Confidential Data Entry:**  Typing is more private and secure than speaking sensitive information aloud in public or shared spaces.
+*   **Confidentiality and Privacy:**  Typing is more private and secure than speaking sensitive information aloud in public or shared spaces.
 *   **Noisy Environments:** Speech recognition accuracy can be significantly reduced in noisy environments, making keyboard input more reliable.
-*   **Technical or Specialized Vocabulary:** Keyboards are often more efficient and accurate for entering complex technical terms, code, or specialized vocabulary that speech recognition may misinterpret.
+*   **Precision and speed for experts:** Keyboards are often more efficient and accurate for entering complex technical terms, code, or specialized vocabulary that speech recognition may misinterpret.
 
 **(iii) Briefly describe the following categories of HCI design guidelines:** (9mks)
 
@@ -157,8 +129,6 @@ Six of Nielsen's 10 Heuristics for Heuristic Evaluation:
 
 **(ii) Describe the five ways by which a user interacts with the application.** (5mks)
 
-Five ways a user interacts with an application:
-
 *   **Input:**  Providing data or commands to the application (e.g., typing, clicking, speaking).
 *   **Output:** Receiving information or feedback from the application (e.g., text, graphics, sounds).
 *   **Feedback:**  Receiving responses from the application to user actions, confirming actions or indicating status.
@@ -166,9 +136,7 @@ Five ways a user interacts with an application:
 *   **Navigation:**  Moving through different parts of the application's interface and content.
 
 
-**3b Software Tools in HCI (9mks)**
-
-**(iii) Write short notes on the following commonly used software tools in HCI:**
+**3b (iii) Write short notes on the following commonly used software tools in HCI:**
 
 **(i) Specification Methods:**
 
@@ -192,11 +160,7 @@ Five ways a user interacts with an application:
     *   **UI Frameworks and Libraries:**  Code libraries that provide pre-built UI components and structures, facilitating rapid UI development (e.g., React, Angular, Flutter, Material UI).
 
 
-**4a Usability Components and Interaction Design Activities (8mks)**
-
-**(i) What are the three components of usability in the Concept of Usability Engineering?** (4mks)
-
-The three components of usability in Usability Engineering are:
+**4a (i) What are the three components of usability in the Concept of Usability Engineering?** (4mks)
 
 *   **Effectiveness:**  The accuracy and completeness with which users achieve specified goals.  Can users complete tasks accurately?
 *   **Efficiency:**  The resources expended in relation to the accuracy and completeness with which users achieve goals. How quickly can users perform tasks?
@@ -206,25 +170,24 @@ The three components of usability in Usability Engineering are:
 
 Four basic activities of interaction design:
 
-*   **Discovering (or Understanding):**  Understanding the users, their needs, context of use, and the problem domain. This involves user research, requirements gathering, and analysis.
+*   **Requirements / Discovering (or Understanding):**  Understanding the users, their needs, context of use, and the problem domain. This involves user research, requirements gathering, and analysis.
+*   **Analysis:** ordering results to identify key issues
 *   **Designing:**  Creating conceptual and concrete designs for the interaction, including interface design, navigation, and functionality.
-*   **Prototyping:**  Building interactive prototypes to visualize and test design ideas. Prototypes can range from low-fidelity paper prototypes to high-fidelity interactive mockups.
-*   **Evaluating:**  Assessing the usability and user experience of the design through user testing, heuristic evaluation, and other evaluation methods. This informs iterative design improvements.
+*   **Iteration and prototyping:**  Building interactive prototypes to visualize and test design ideas. Prototypes can range from low-fidelity paper prototypes to high-fidelity interactive mockups.
+*   (bonus) **Evaluating:**  Assessing the usability and user experience of the design through user testing, heuristic evaluation, and other evaluation methods. This informs iterative design improvements.
 
 
-**4b Usability Terms (12mks)**
-
-**(iii) Write short notes on the following terms as used in the concept of usability:**
+**4b (iii) Write short notes on the following terms as used in the concept of usability:**
 
 **(i) Usability Study:**
 
-*   A broad term encompassing various research methods used to evaluate the usability of a product, system, or interface.
+*   An assessment of a system's functionality and usability from the human perspective to see if it satisfies user needs.
 *   Involves observing users as they interact with the system to identify usability problems and areas for improvement.
 *   Can include various methods like usability testing, field studies, surveys, and expert reviews.
 
 **(ii) Usability Testing:**
 
-*   A specific type of usability study that focuses on observing users as they perform specific tasks with a product or interface.
+*   Actual testing of the system with the intended users to measure performance and experience.
 *   Researchers collect data on user performance, errors, and satisfaction.
 *   Aims to identify usability issues and gather user feedback to improve the design.
 
@@ -235,9 +198,7 @@ Four basic activities of interaction design:
 *   Focuses on verifying that the system is usable, functional, and meets predefined acceptance criteria.
 
 
-**5a Interactive Devices for HCI (12mks)**
-
-**(i) Briefly explain the following interactive devices used for human computer interaction:**
+**5a (i) Briefly explain the following interactive devices used for human computer interaction:**
 
 **(i) Touch Screen:**
 
@@ -264,20 +225,14 @@ Four basic activities of interaction design:
 *   Still a primary input device for text entry, programming, and many other computer tasks.
 
 
-**5b User-Centered Approach and Dialog Levels (8mks)**
+**5b (i) State three principles for user-centered approach that you know.** (4mks)
 
-**(i) State three principles for user-centered approach that you know.** (4mks)
-
-Three principles of a user-centered approach:
-
-*   **Early focus on users and tasks:**  Involve users early in the design process and understand their tasks and goals.
-*   **Empirical measurement:**  Base design decisions on user data and testing, rather than assumptions.
-*   **Iterative design:**  Design, test, and refine the design repeatedly based on user feedback and evaluation.
+*   **Put the user first**
+*   **Keep the user in the center** throughout the process
+*   **Remember the user at the end** of the design cycle
 
 **(ii) A dialog is the construction of interaction between two or more beings or systems studied at three levels in HCI. Outline the three levels of a dialog in HCI.** (4mks)
 
-Three levels of a dialog in HCI:
-
-*   **Conceptual Level:**  The highest level, focusing on the overall meaning and goals of the interaction. It defines what the user wants to achieve and the system's purpose in the interaction.
-*   **Semantic Level:**  Deals with the structure and flow of the interaction. It defines the sequence of actions, the information exchanged, and the logical relationships between different parts of the dialog.
-*   **Syntactic Level:** The lowest level, concerning the specific words, actions, and interface elements used in the interaction. It details the concrete representation of the dialog on the interface, including commands, menus, and widgets.
+*   **Lexical**: the lowest level, dealing with basic input/output mechanics.
+*   **Syntactic**: the middle level, defining the structure of the conversation or sequence of actions.
+*   **Semantic**: the highest level, dealing with what the actions actually do to the system (meaning).
