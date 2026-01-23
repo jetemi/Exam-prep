@@ -236,3 +236,9 @@ Four basic activities of interaction design:
 *   **Lexical**: the lowest level, dealing with basic input/output mechanics.
 *   **Syntactic**: the middle level, defining the structure of the conversation or sequence of actions.
 *   **Semantic**: the highest level, dealing with what the actions actually do to the system (meaning).
+
+---
+Addition
+
+![worked exercise 1](HCI_1.jpeg)
+![worked exercise 2](HCI_2.jpeg)
