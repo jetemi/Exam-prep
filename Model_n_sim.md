@@ -5,7 +5,7 @@
 **Modelling** is the process of representing a real-world system using mathematical, logical, or physical relationships.
 **Simulation** is the imitation of the operation of a real system over time using the model, especially when analytical solutions are difficult.
 
-| Another view / explanation |
+| Another view |
 | :--- |
 
 *   **Modeling:** This is the process of creating a simplified, conceptual, or mathematical representation of a real-world system or process. The goal is to capture the essential characteristics of the system to study its behavior without interacting with the actual system itself.
@@ -310,7 +310,7 @@ Simulate 10 days, track:
 Because many real-world problems **cannot be solved analytically**. Real-world systems are often too complex for analytical math. Simulation can handle **randomness, non-linear relationships, and time-dependent behavior** that simple equations cannot. It allows "what-if" testing of high-risk scenarios (like airline safety) without any real-world danger or loss of assets.
 
 ---
-# In Class
+# Questions mentioned in Class
 
 **1. Give reasons why models are different from one another.**
 
