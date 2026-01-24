@@ -1,15 +1,26 @@
 ### **Question 1**
 
 **(a) What do you understand by Modeling and Simulation? (4 marks)**
+
+**Modelling** is the process of representing a real-world system using mathematical, logical, or physical relationships.
+**Simulation** is the imitation of the operation of a real system over time using the model, especially when analytical solutions are difficult.
+
+| Another view / explanation |
+| :--- |
+
 *   **Modeling:** This is the process of creating a simplified, conceptual, or mathematical representation of a real-world system or process. The goal is to capture the essential characteristics of the system to study its behavior without interacting with the actual system itself.
 *   **Simulation:** This is the act of operating or running the model over time. It involves using the model to mimic the actual operation of a system to evaluate various scenarios, predict future outcomes, or understand how the system reacts to changes.
 
 **(b) State the importance of Modeling. (5 marks)**
-1.  **Risk Reduction:** Allows testing of ideas in a safe environment before implementation in reality.
-2.  **Cost-Effectiveness:** It is often cheaper to build and test a model than to experiment with a real system (e.g., crash-testing a virtual car vs. a real one).
-3.  **Time Compression:** Years of real-world operation can be simulated in seconds on a computer.
-4.  **Insight into Complex Systems:** Helps visualize and understand the interactions within systems too complex for simple human intuition.
-5.  **Ability to test "What-If" Scenarios:** Managers can see the impact of policy changes before they are enacted.
+
+1. Reduces cost of experimenting with real systems
+2. Helps in decision making
+3. Allows testing of alternatives
+4. Saves time
+5. Helps understand complex systems
+6. Predicts future behavior
+7. Improves system performance
+8.  **Risk Reduction:** Allows testing of ideas in a safe environment before implementation in reality.
 
 **(c) Numerical Simulation Problem (8.5 marks)**
 To solve this, we first establish the cumulative probability ranges for the three variables.
@@ -61,104 +72,6 @@ To solve this, we first establish the cumulative probability ranges for the thre
 **Most likely return:** Based on this small sample, returns vary significantly. The average return is approximately **0.1098 (or 11%)**.
 
 ---
----
-
-# ✅ QUESTION 1 — WORKED SOLUTIONS
-
-## (a) Meaning of Modelling and Simulation
-
-**Modelling** is the process of representing a real-world system using mathematical, logical, or physical relationships.
-**Simulation** is the imitation of the operation of a real system over time using the model, especially when analytical solutions are difficult.
-
----
-
-## (b) Importance of Modelling (Any 6)
-
-1. Reduces cost of experimenting with real systems
-2. Helps in decision making
-3. Allows testing of alternatives
-4. Saves time
-5. Helps understand complex systems
-6. Predicts future behavior
-7. Improves system performance
-
----
-
-## (c) Investment Simulation (3 Years)
-
-### Step 1: Construct Cumulative Probability Tables
-
-#### Annual Demand
-
-| Demand | Prob | Cum Prob | RN Range |
-| ------ | ---- | -------- | -------- |
-| 20,000 | 0.15 | 0.15     | 00–14    |
-| 25,000 | 0.10 | 0.25     | 15–24    |
-| 30,000 | 0.20 | 0.45     | 25–44    |
-| 35,000 | 0.30 | 0.75     | 45–74    |
-| 40,000 | 0.15 | 0.90     | 75–89    |
-| 45,000 | 0.10 | 1.00     | 90–99    |
-
-#### Price – Cost per Unit
-
-| Value | Prob | RN Range |
-| ----- | ---- | -------- |
-| 4     | 0.10 | 00–09    |
-| 5     | 0.20 | 10–29    |
-| 7     | 0.40 | 30–69    |
-| 9     | 0.20 | 70–89    |
-| 10    | 0.10 | 90–99    |
-
-#### Investment Required (₦m)
-
-| Investment | Prob | RN Range |
-| ---------- | ---- | -------- |
-| 1.5        | 0.25 | 00–24    |
-| 2.0        | 0.50 | 25–74    |
-| 2.5        | 0.25 | 75–99    |
-
----
-
-### Step 2: Assign Random Numbers (3 per year)
-
-RN sequence: **35, 19, 18, 07, 01, 91, 18, 12, 03**
-
-| Year | Demand RN | Price RN | Invest RN |
-| ---- | --------- | -------- | --------- |
-| 1    | 35        | 19       | 18        |
-| 2    | 07        | 01       | 91        |
-| 3    | 18        | 12       | 03        |
-
----
-
-### Step 3: Decode Values
-
-| Year | Demand | Price-Cost | Investment |
-| ---- | ------ | ---------- | ---------- |
-| 1    | 30,000 | 5          | 1.5m       |
-| 2    | 20,000 | 4          | 2.5m       |
-| 3    | 25,000 | 5          | 1.5m       |
-
----
-
-### Step 4: Compute Profit
-
-[
-\text{Profit} = (\text{Demand} × \text{Margin}) − \text{Investment}
-]
-
-| Year | Profit (₦m)                  |
-| ---- | ---------------------------- |
-| 1    | (30,000×5)−1.5m = **−1.35m** |
-| 2    | (20,000×4)−2.5m = **−2.42m** |
-| 3    | (25,000×5)−1.5m = **−1.38m** |
-
-**Average Profit**
-[
-= \frac{−1.35 −2.42 −1.38}{3} = −1.72m
-]
-
----
 
 ### **Question 2**
 
@@ -208,70 +121,6 @@ Patients arrive every 30 mins (8:00, 8:30, 9:00, etc.).
 
 ---
 
-
----
-
-
-# ✅ QUESTION 2 — WORKED SOLUTIONS
-
-## (a) Analytical Model
-
-An analytical model uses **mathematical equations** to represent system behavior and gives **exact solutions**, unlike simulation which gives approximate results.
-
----
-
-## (b) Steps in Modelling
-
-1. Problem definition
-2. System description
-3. Model formulation
-4. Data collection
-5. Model validation
-6. Experimentation
-7. Result interpretation
-
-## (c) Dentist Simulation
-
-### Step 1: RN Mapping (Service Time)
-
-| Service    | Time | RN Range |
-| ---------- | ---- | -------- |
-| Filling    | 45   | 00–29    |
-| Crown      | 60   | 30–44    |
-| Extraction | 15   | 45–59    |
-| Education  | 45   | 60–69    |
-| Check-up   | 15   | 70–99    |
-
----
-
-### Step 2: Decode Random Numbers
-
-RN: **85, 21, 13, 90, 11, 25, 90, 17, 70**
-
-| Patient | RN | Service  | Time |
-| ------- | -- | -------- | ---- |
-| 1       | 85 | Check-up | 15   |
-| 2       | 21 | Filling  | 45   |
-| 3       | 13 | Filling  | 45   |
-| 4       | 90 | Check-up | 15   |
-| 5       | 11 | Filling  | 45   |
-| 6       | 25 | Filling  | 45   |
-| 7       | 90 | Check-up | 15   |
-| 8       | 17 | Filling  | 45   |
-| 9       | 70 | Check-up | 15   |
-
----
-
-### Step 3: Compute Waiting & Idle Time
-
-(All arrive at 8am)
-
-You form a **service timeline**.
-Doctor idle time = gaps between services.
-Average waiting time = total waiting ÷ patients.
-
-(You’ll get full marks showing the timeline table.)
-
 ### **Question 3**
 
 **(a) State and explain the Simulation process (4 marks)**
@@ -282,49 +131,30 @@ The simulation process is an iterative cycle:
 4.  **Analysis:** Evaluate the results against objectives.
 5.  **Iteration:** Refining the model based on results and re-running until an optimal solution or understanding is reached.
 
-**(b) What are the advantages and disadvantages of Simulation? (6 marks)**
-*   **Advantages:** Can model systems where analytical (mathematical) solutions are impossible; provides a safe environment for experimentation; helps identify bottlenecks.
-*   **Disadvantages:** Can be very time-consuming and expensive to develop; requires high-level expertise; results are only as good as the input data (garbage in, garbage out).
+| Another view / explanation |
+| :--- |
 
-
-# ✅ QUESTION 3 — SUMMARY SOLUTION
-
-## (a) Simulation Process
-
+(a) Simulation Process
 1. Define problem
 2. Build model
 3. Generate random numbers
 4. Run simulation
 5. Analyze results
 
----
 
-## (b) Advantages vs Disadvantages
-
-**Advantages**
-
-* Handles complex systems
-* Risk-free experimentation
-* Flexible
-
-**Disadvantages**
-
-* Costly
-* Time consuming
-* Results are approximate
+**(b) What are the advantages and disadvantages of Simulation? (6 marks)**
+*   **Advantages:** 
+    - Can model systems where analytical (mathematical) solutions are impossible;
+    - Handles complex systems
+    - Provides a safe environment for experimentation;
+    - Helps identify bottlenecks.
+*   **Disadvantages:** 
+    - Can be very time-consuming and expensive to develop;
+    - Requires high-level expertise;
+    - Results are approximate;
+    - Results are only as good as the input data (garbage in, garbage out).
 
 ---
-
-## (c) Profit Simulation
-
-Same steps as Question 1:
-
-1. Build RN tables
-2. Decode price, cost, sales
-3. Compute yearly profit
-4. Average profit over 2 years
----
-
 
 ### **Question 4**
 
@@ -339,6 +169,18 @@ For complex, dynamic, and stochastic industrial or business problems like the on
 5.  **Verification and Validation:** Ensure the model is bug-free and accurately represents reality.
 6.  **Experimental Design:** Decide on the number of trials and variables to test.
 7.  **Analysis and Reporting:** Interpret simulation results to make management decisions.
+
+
+| Another view / explanation |
+| :--- |
+
+(b) Steps in Simulation
+
+1. Define system
+2. Collect data
+3. Build model
+4. Validate
+5. Experiment
 
 **(c) Simulation Problem: Machine Maintenance (8.5 marks)**
 
@@ -395,45 +237,6 @@ Using provided random numbers in pairs: (61, 87), (85, 39), (16, 28), etc.
 
 ---
 
-# ✅ QUESTION 4 — KEY RESULTS
-
-## (a) Simulation Model for Complex Problems
-
-➡ **Discrete-Event Simulation**
-
----
-
-## (b) Steps in Simulation
-
-1. Define system
-2. Collect data
-3. Build model
-4. Validate
-5. Experiment
-
----
-
-## (c) Machine Breakdown Simulation
-
-### Costs:
-
-* Downtime cost = $70/hour
-* Repair cost = $20/hour
-
-For each breakdown:
-[
-\text{Total Cost} = (\text{Downtime}×70) + (\text{Repair Time}×20)
-]
-
-You simulate **15 breakdowns**, sum total cost, then test:
-
-* 1 repairman
-* 2 repairmen
-
-Choose option with **lowest total cost** → correct answer.
-
----
-
 ### **Question 5**
 
 **(a) What is the role of Computers in Simulation with examples? (5 marks)**
@@ -454,6 +257,11 @@ Computers are the backbone of modern simulation because they can:
 8. Nuclear Power Plant Safety Testing
 9. Logistics and Supply Chain Management
 10. Video Game Physics and AI
+11. Inventory Simulation
+12. Education
+13. Banking
+14. Telecoms
+15. Oil and Gas
 
 **(c) Inventory Simulation (7.5 marks)**
 *(Note: Full tabular simulation for 10 days would be lengthy; the logic involves tracking Daily Demand, End-of-Day Stock, and Order Lead Time. If stock + outstanding order < 10 units, order 15 more.)*
@@ -462,26 +270,10 @@ Computers are the backbone of modern simulation because they can:
 *   **Rule:** Order 15 when (Stock + Pending Order) < 10. Lead time = 3 days.
 *   
 
----
+| Another view / explanation |
+| :--- |
 
-
-# ✅ QUESTION 5 — DIRECT ANSWERS
-
-## (a) Role of Random Numbers
-
-* Generate randomness
-* Represent uncertainty
-* Drive simulation events
-
----
-
-## (b) Applications (Any 10)
-
-Banking, traffic, hospitals, inventory, telecoms, oil & gas, airports, weather, finance, education.
-
----
-
-## (c) Inventory Simulation
+(c) Inventory Simulation
 
 Key formula:
 [
@@ -506,7 +298,6 @@ Simulate 10 days, track:
 3.  **Student registration procedure:** Flowchart or Process Model.
 4.  **Oil field locations in Nigeria:** Geospatial/Geological Physical or Digital Model.
 
-**(b) (i) Supermarket Simulation (4 marks)**
 1.  **Checkout process:** Discrete Event Simulation (modeling the steps of scanning, bagging, paying).
 2.  **Queueing metrics:** Queueing Theory Simulation (to track wait times and customer count).
 
@@ -516,40 +307,165 @@ Simulate 10 days, track:
 *   **Software/Hardware:** Advanced simulation software licenses and the high-performance computers needed to run them are costly.
 
 **(iii) Why use simulation if it is more expensive? (2.5 marks)**
-Real-world systems are often too complex for analytical math. Simulation can handle **randomness, non-linear relationships, and time-dependent behavior** that simple equations cannot. It allows "what-if" testing of high-risk scenarios (like airline safety) without any real-world danger or loss of assets.
+Because many real-world problems **cannot be solved analytically**. Real-world systems are often too complex for analytical math. Simulation can handle **randomness, non-linear relationships, and time-dependent behavior** that simple equations cannot. It allows "what-if" testing of high-risk scenarios (like airline safety) without any real-world danger or loss of assets.
 
 ---
+# In Class
 
-# ✅ QUESTION 6 — THEORY (High-Scoring)
+**1. Give reasons why models are different from one another.**
 
-## (a) Recommended Models
+Models differ from one another for several key reasons:
 
-1. Railway congestion → **Simulation model**
-2. Ordering policy → **Analytical / Simulation**
-3. Student registration → **Flowchart / Discrete simulation**
-4. Oil field location → **Physical / Mathematical model**
+*   **Purpose:** The intended purpose of the model dictates its structure and level of detail. A model used for high-level strategic planning will be very different from one designed for detailed operational decision-making.
+*   **Assumptions and Simplifications:** All models are simplifications of reality.  Different modelers will make different assumptions about which aspects of the system are important and which can be ignored. These assumptions influence the model's accuracy and applicability.
+*   **Level of Detail:**  The level of detail included in a model varies widely. Some models are highly detailed (e.g., agent-based models), while others are more abstract (e.g., system dynamics models). This difference affects computational cost and the types of questions the model can answer.
+*   **Data Availability:** The availability and quality of data to parameterize the model influence the model's structure. If data is limited, the model will likely be simpler.
+*   **Modeler's Expertise and Perspective:** Different modelers may have different backgrounds, biases, and preferences, which will impact their model design choices. For instance, a finance professional would build a different simulation of a bank than a software architect.
+*   **Computational Resources:** The available computational resources (processing power, memory, software) can influence the complexity of the model.
 
----
+**2. Types of Model**
 
-## (b) Supermarket Models
+Here are some common types of models, with brief descriptions:
 
-* Queueing model
-* Monte Carlo simulation
+*   **Physical Models:** These are scaled-down or simplified physical representations of a system.
+    *   *Example:* A wind tunnel model of an airplane.
+*   **Analogue Models:**  These use one set of phenomena to represent another.
+    *   *Example:* An electrical circuit used to represent a mechanical system.
+*   **Mathematical Models:**  These use mathematical equations and relationships to represent the system.
+    *   *Example:* A differential equation describing the motion of a pendulum.
+        *   **Deterministic Models:** Output is fixed for a given set of inputs and parameters.
+        *   **Stochastic/Probabilistic Models:** Incorporate randomness, using probability distributions to represent uncertain events.
+*   **Simulation Models:** These are computer-based models that simulate the behavior of a system over time.
+    *   **Discrete Event Simulation (DES):** Models systems as a sequence of discrete events.
+    *   **Continuous Simulation:**  Models systems where changes occur continuously (e.g., fluid flow, temperature change).
+    *   **Agent-Based Models (ABM):** Model individual agents and their interactions to understand emergent behavior.
+    *   **System Dynamics Models:** Focus on feedback loops and stocks and flows to understand the behavior of complex systems.
+*   **Statistical Models:** Use statistical techniques to analyze data and make predictions.
+    *   *Example:* Regression models, time series analysis.
 
----
+**3. How to Choose the Appropriate Simulation Model**
 
-## (c) Why Simulation Is Expensive
+Choosing the right simulation model depends on the following factors:
 
-* Requires data
-* Needs computing power
-* Time consuming
+*   **The Purpose/Goals of the Simulation:** What questions do you want to answer? Are you interested in performance, capacity planning, cost analysis, or something else?
+*   **The System's Characteristics:** Is the system discrete or continuous? Does it involve significant uncertainty? Are there individual agents or complex interactions?
+*   **Available Data:** How much data do you have available to parameterize and validate the model?
+*   **Time and Budget Constraints:** How much time and resources do you have to develop and run the simulation?
+*   **Level of Detail Required:** How much detail is needed to answer your questions? Too much detail can increase complexity and computational cost. Too little detail may result in inaccurate results.
+*   **Available Software and Expertise:** What simulation software are you familiar with, and what is the team's skillset?
 
----
+Here's a simplified decision-making process:
 
-## (d) Why Still Used
+1.  **Define Objectives:** Clearly state the questions to be answered.
+2.  **Characterize the System:** Identify key components, processes, and interactions.
+3.  **Identify Data Sources:** Determine available data.
+4.  **Evaluate Model Types:** Select the model type that best aligns with the system characteristics and goals (e.g., DES, continuous simulation, ABM).
+5.  **Choose Software:** Select appropriate simulation software based on expertise, cost, and model type.
+6.  **Develop, Validate, and Verify the model.**
+7.  **Run simulations and analyze the result.**
 
-Because many real-world problems **cannot be solved analytically**.
+**4. Identify Four Variable Factors That Must Be Included in Simulations**
 
+Variable factors are those that change within the simulation and drive the system's behavior. Four crucial examples:
 
-Here are the solutions for Questions 4 and 6 from the examination paper.
+1.  **Random Variables:** These represent the uncertainty inherent in the system. They often drive the stochastic aspect of a simulation.
+    *   *Examples:* Interarrival times of customers, service times, equipment failure rates, processing times.
+2.  **System Parameters:** These are constants that influence the simulation model and often have fixed values.
+    *   *Examples:* The number of servers in a queue, the capacity of a warehouse, the speed of a conveyor belt, the price of an asset.
+3.  **Decision Variables:** These are variables the modeler can change to test and optimize the system.
+    *   *Examples:* Number of employees, the product mix, order quantity, inventory levels, different staffing levels.
+4.  **State Variables:** These describe the current state of the system at any given time. They change as the simulation progresses.
+    *   *Examples:* The number of customers in a queue, the inventory level, the status of a machine (idle, working, broken), the current time.
 
+**5. Discuss Two Challenges Associated with Simulation and Solutions to Them**
+
+1.  **Challenge:** **Model Validation and Verification.**
+    *   **Description:** It is difficult to guarantee that a model accurately reflects the real-world system (validation) and that the model is implemented correctly (verification).
+    *   **Solution:**
+        *   **Validation:**
+            *   Compare model outputs to real-world data (if available).
+            *   Use sensitivity analysis to test how the model's output changes when the input parameters are adjusted.
+            *   Get feedback from subject matter experts.
+            *   Run the simulation with extreme input values to ensure expected behaviors.
+        *   **Verification:**
+            *   Carefully review the code and logic.
+            *   Use debugging tools to step through the simulation and check intermediate results.
+            *   Build the model incrementally, testing each component.
+            *   Use a software that helps in error identification and code clarity.
+2.  **Challenge:** **Computational Cost and Time.**
+    *   **Description:** Complex simulations can require significant computational resources and long run times, especially for many replications.
+    *   **Solution:**
+        *   **Model Simplification:** Reduce the level of detail if possible, while still maintaining model accuracy.
+        *   **Efficient Code:** Optimize the simulation code for speed.
+        *   **Experiment Design:** Carefully design the simulation experiments to minimize the number of runs needed.
+        *   **Parallel Processing/Cloud Computing:** Utilize multiple processors or cloud-based computing resources to accelerate simulation runs.
+
+**6. How Do You Ensure Reliability of Simulation Results?**
+
+Ensuring reliability involves several strategies:
+
+*   **Validation:** As mentioned above, make sure the model accurately represents the real system.
+*   **Verification:** Confirm that the model is implemented correctly.
+*   **Statistical Analysis:** Analyze the output data using appropriate statistical techniques.
+    *   **Multiple Replications:** Run the simulation multiple times (replications) with different random number seeds to account for randomness.
+    *   **Confidence Intervals:** Calculate confidence intervals for key performance indicators to quantify the uncertainty in the results.
+    *   **Statistical Tests:** Use statistical tests (e.g., t-tests, ANOVA) to compare different scenarios or treatment and measure the significance of observed differences.
+*   **Proper Experiment Design:** Carefully plan the simulation experiments, including the number of replications, the length of the simulation run, and the warm-up period.
+*   **Sensitivity Analysis:** Determine how sensitive the results are to changes in the model's input parameters.
+*   **Documentation:** Maintain thorough documentation of the model, assumptions, and results.
+
+**7. List Two Events that Cause Change in Discrete Event Simulation**
+
+In a Discrete Event Simulation (DES), events are the key drivers of change.  Two common event types are:
+
+1.  **Arrivals:**  An entity (e.g., a customer, a job) enters the system.
+    *   *Example:* A customer arrives at a checkout counter, a machine receives a new part.
+2.  **Departures/End of Service:**  An entity leaves the system, or a service is completed.
+    *   *Example:* A customer finishes being served at the checkout, a product leaves the manufacturing process.
+
+**8. Give Five Detailed Explanations of the Concept of Discrete Event Simulation (DES)**
+
+Here's a detailed explanation of DES:
+
+1. **Instantaneous State Changes**: State variables in DES change instantaneously at a countable number of points in simulated time.
+2. **Event-Based Progress**: The system evolves specifically at the points in time when an event—defined as an instantaneous occurrence that may change the state—occurs.
+3. **Next-Event Time Advance**: DES uses a simulation clock that jumps from one event time to the next most imminent event, effectively skipping over periods of inactivity to save computer time.
+4. **Stochastic Modeling**: It typically incorporates randomness by using probability distributions for inputs like interarrival and service times, making the output itself random.
+5. **Sequential Logic**: The simulation logic is executed in the strict order of the events' simulated time of occurrence
+
+| Another view |
+| :--- |
+
+1.  **Focus on Discrete Events:** DES models systems as a sequence of discrete events that occur at specific points in time. The simulation jumps from event to event, not continuously simulating all of the time. This event-driven approach is a key differentiator from continuous simulation.
+2.  **Event Scheduling:** DES uses an event scheduler to manage the events. Events are scheduled to occur at specific simulation times. The scheduler determines the order in which events are processed. Each event's action is known by the model and is programmed.
+3.  **State Variables:** The state of the system is tracked through state variables. These variables represent the current conditions of the system at any given simulation time. State variables change when events occur.
+4.  **Time Advancement:** Time in DES advances in discrete steps, from one event to the next. The simulation clock jumps to the time of the next scheduled event.
+5.  **Entity Flow:** Entities (e.g., customers, jobs, parts) move through the system, interacting with different resources (e.g., servers, machines, workstations). The simulation tracks the entities and their activities in the system. As entities traverse the model, their attributes can also change.
+
+**9. Key Components of a Simulation Model**
+
+The key components of a simulation model include:
+
+*   **Entities:** The objects that move through the system (e.g., customers, jobs, parts, vehicles).
+*   **Resources:** The elements that provide service or are used by entities (e.g., servers, machines, workstations, employees).
+*   **Activities:** The actions performed by entities or on entities (e.g., waiting in a queue, being served, being processed).
+*   **Events:** The occurrences that change the state of the system (e.g., arrivals, departures, failures, start of service, end of service).
+*   **State Variables:** Variables that describe the state of the system at any given time (e.g., number of customers in the queue, inventory level).
+*   **Simulation Clock:** A variable that tracks the current simulation time.
+*   **Event List/Scheduler:** A list of scheduled events, sorted by their scheduled time.
+*   **Input Data:** Data that defines the system's characteristics and parameters (e.g., arrival rates, service times, resource capacities).
+*   **Output Data:** The performance measures generated by the simulation (e.g., waiting times, throughput, resource utilization).
+
+**10. Explain the Difference Between Theory and Hypothesis**
+
+*   **Theory:** 
+    - A well-substantiated explanation of some aspect of the natural world, supported by a large body of evidence from repeated experiments.
+    - It provides a broad framework for understanding and predicting phenomena.
+    - Theories are often developed from many observations and experiments.
+    - *Example:* The theory of gravity.
+*   **Hypothesis:** 
+    - A tentative explanation for a phenomenon, which is testable and falsifiable.
+    - It is a proposed explanation for a specific observation or set of observations.
+    - A hypothesis is typically a specific, focused statement.
+    - *Example:*  "Increasing the amount of fertilizer will increase crop yield."
+    - A hypothesis can be tested, and the outcome provides evidence for or against it.
