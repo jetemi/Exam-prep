@@ -10,29 +10,10 @@ Artificial Intelligence (AI) is indeed a branch of computer science aiming to cr
 
 **1. b. Highlight and explain four approaches to artificial Intelligence (12 Marks)**
 
-*   **1. Symbolic AI (Rule-based AI):**
-    *   **Highlight:**  Focuses on representing knowledge explicitly using symbols, rules, and logic.
-    *   **Explanation:**  This approach believes intelligence can be achieved by manipulating symbols and applying logical rules. Expert systems are a prime example.  Knowledge is encoded as "if-then" rules.  Reasoning is performed by applying these rules to solve problems.  **Example:**  A medical diagnosis system might have rules like "IF patient has fever AND cough THEN suspect flu."
-    *   **Strengths:**  Human-understandable reasoning, good for well-defined problems with structured knowledge.
-    *   **Weaknesses:**  Struggles with uncertain or incomplete knowledge, knowledge acquisition bottleneck (difficult to extract rules from experts), brittle (rules need to be explicitly updated).
-
-*   **2. Connectionist AI (Neural Networks):**
-    *   **Highlight:**  Mimics the structure of the human brain using interconnected nodes (neurons) to learn patterns from data.
-    *   **Explanation:** Inspired by biological neural networks, this approach uses artificial neural networks consisting of layers of interconnected nodes.  Learning occurs by adjusting the connections (weights) between nodes based on training data.  Deep learning is a subfield of connectionism with networks having many layers. **Example:** Image recognition, natural language processing, speech recognition.
-    *   **Strengths:**  Excellent at pattern recognition, learning from large datasets, robust to noisy data, can handle complex and non-linear relationships.
-    *   **Weaknesses:**  "Black box" problem (difficult to understand why a network makes a specific decision), requires large amounts of training data, computationally intensive.
-
-*   **3. Evolutionary AI (Genetic Algorithms):**
-    *   **Highlight:**  Uses principles of natural selection and evolution to develop AI systems.
-    *   **Explanation:**  This approach employs algorithms inspired by biological evolution, such as genetic algorithms.  A population of candidate solutions is iteratively improved through processes like selection, crossover (combining solutions), and mutation.  The "fittest" solutions (those that perform best according to a fitness function) survive and reproduce.  **Example:**  Optimizing complex systems, robot control, game playing.
-    *   **Strengths:**  Good for complex optimization problems, can discover novel solutions, robust to changes in the environment.
-    *   **Weaknesses:**  Computationally expensive, can be slow to converge to a solution, solutions may be difficult to interpret.
-
-*   **4. Statistical AI (Machine Learning):**
-    *   **Highlight:**  Emphasizes using statistical methods to learn from data and make predictions.
-    *   **Explanation:**  This broad approach encompasses various techniques like Bayesian networks, support vector machines, decision trees, and many other machine learning algorithms.  It focuses on building models that can learn statistical relationships from data and generalize to unseen data.  **Example:** Spam filtering, recommendation systems, fraud detection.
-    *   **Strengths:**  Data-driven, can handle uncertainty and noise, wide range of algorithms for different tasks, strong theoretical foundation.
-    *   **Weaknesses:**  Performance depends heavily on data quality and quantity, may require feature engineering (selecting relevant input features), can be computationally intensive for complex models.
+1. **Strong AI**: This approach focuses on creating machines with genuine self-awareness and human-level reasoning. It suggests that a properly programmed computer is not just a tool, but actually possesses a mind and cognitive mental states.
+2. **Weak AI**: This approach involves building systems that act as if they are intelligent but do not possess true understanding or consciousness. It aims to simulate human cognition to perform tasks without requiring actual "thought."
+3. **Applied AI**: This is the practical branch of AI focused on creating commercially successful "smart" systems. It focuses on solving real-world problems, such as facial recognition for security systems.
+4. **Cognitive AI**: This approach uses computer models as a scientific tool to test theories about human psychology. It aims to understand how the human mind functions, specifically how we process information and solve abstract problems.
 
 **2. a. Define the term agent (1 Mark)**
 
@@ -40,46 +21,40 @@ An **agent** in AI is any entity that can perceive its environment through senso
 
 **2. b. State three performance measures of an agent (6 Marks)**
 
-*   **1. Completeness:**  Measures whether the agent achieves its goals or intended outcomes.  A complete agent successfully solves the problem or completes the task it is designed for.  For example, a vacuum cleaning agent is complete if it cleans all the dirt in a given area.
-*   **2. Efficiency:**  Measures how effectively the agent uses resources (like time, energy, or computational power) to achieve its goals. An efficient agent achieves its goals with minimal resource consumption. For example, a route-finding agent is efficient if it finds the shortest path in a reasonable time.
-*   **3. Optimality:** Measures whether the agent finds the *best* possible solution or outcome. An optimal agent always aims for the highest possible performance level given its goals and constraints. For example, a game-playing agent is optimal if it always makes moves that lead to the best possible outcome (winning or drawing).
+*   **1. Accuracy:**  Measures whether the agent achieves its goals or intended outcomes.  A complete agent successfully solves the problem or completes the task it is designed for.  For example, a vacuum cleaning agent is complete if it cleans all the dirt in a given area.
+*   **2. Efficiency/Resources used (Power/Money):**  Measures how effectively the agent uses resources (like time, energy, or computational power) to achieve its goals. An efficient agent achieves its goals with minimal resource consumption. For example, a route-finding agent is efficient if it finds the shortest path in a reasonable time.
+*   **3. Quality/Optimality:** Measures whether the agent finds the *best* possible solution or outcome. An optimal agent always aims for the highest possible performance level given its goals and constraints. For example, a game-playing agent is optimal if it always makes moves that lead to the best possible outcome (winning or drawing).
 
 **2. c. Highlight and explain three agent architectures (10.5 Marks)**
 
-*   **1. Simple Reflex Agent:**
-    *   **Highlight:**  Reacts directly to percepts based on predefined condition-action rules.
-    *   **Explanation:** This is the simplest architecture. It works based on "if-condition-then-action" rules.  The agent perceives the current state of the environment and selects an action based on a direct mapping from percept to action. It does not have memory or consider past percepts or future consequences.
-    *   **Example:** A thermostat that turns on the heater when the temperature is below a set point and turns it off when above.
-    *   **Strengths:** Simple to implement, fast reaction time.
-    *   **Weaknesses:** Limited intelligence, cannot handle partially observable environments, cannot learn or improve over time, rule-based and brittle.
+*   **1. Simple Reflex Agent (Percept-based):** This is the simplest architecture. It works based on "if-condition-then-action" rules. The agent perceives the current state of the environment and selects an action based on a direct mapping from percept to action. It does not have memory or consider past percepts or future consequences.
 
-*   **2. Model-Based Reflex Agent:**
-    *   **Highlight:**  Maintains an internal model of the environment to make decisions, especially in partially observable environments.
-    *   **Explanation:**  This agent maintains an internal state, which is a representation of the current world based on percept history. It uses a "model" of the world to infer aspects of the current state that are not directly perceived.  It then uses condition-action rules based on this internal model to choose actions.
-    *   **Example:** A robot navigating a maze. If it cannot directly see the entire maze, it builds a map (internal model) based on what it has explored so far and uses this map to plan its path.
-    *   **Strengths:** Can handle partially observable environments, more flexible than simple reflex agents.
-    *   **Weaknesses:** Model needs to be accurate, model maintenance can be complex, still largely rule-based.
+*   **2. Model-Based Reflex Agent (State-based):** This agent maintains some sort of state based on the percept sequence received so far. The state is updated regularly based on what the agent senses, and the agent‘s actions.
 
-*   **3. Goal-Based Agent:**
-    *   **Highlight:**  Chooses actions to achieve explicit goals.
-    *   **Explanation:**  This agent has a representation of its goals and uses search and planning to find a sequence of actions that will achieve those goals. It considers the future consequences of its actions and aims to reach a desired goal state.  It needs information about goals (what it wants to achieve) and state transitions (how actions affect the world).
-    *   **Example:** A route-planning system that aims to find the shortest path between two cities.
-    *   **Strengths:** More flexible and intelligent than reflex agents, can handle complex tasks, can plan ahead.
-    *   **Weaknesses:** Goal formulation can be challenging, planning can be computationally expensive, may struggle in dynamic or unpredictable environments.
+    Such agents work as follows:
+    *   information comes from sensors – percepts.
+    *   based on this, the agent changes the current state of the world.
+    *   based on state of the world and knowledge (memory), it triggers actions through the effectors.
+
+*   **3. Goal-Based Agent:** The goal based agent has some goal which forms a basis of its actions.
+
+    Such agents work as follows:
+    *   information comes from sensors - percepts.
+    *   changes the agents current state of the world.
+    *   based on state of the world and knowledge (memory) and goals/intentions, it chooses actions and does them through the effectors.
 
 **3. Define the following terms within the scope of a state space search (17.5 Marks)**
 
-*   **i. Initial State (2.5 Marks):** The **initial state** is the starting configuration or situation in which the problem begins. It is the point from which the agent starts its search for a solution.  **Example:** In a route-finding problem, the initial state is the starting city. In a puzzle like the 8-puzzle, it's the initial arrangement of tiles.
+*   **i. Initial State (2.5 Marks):** The **initial state** is the starting configuration or situation in which the problem begins. It is the point from which the agent starts its search for a solution.
+*   **ii. Action (2.5 Marks):** Also called an **operator** is a transition or move that an agent can make from one state to another state in the problem space. Actions transform the current state to a new state called a successor state.
 
-*   **ii. Action (2.5 Marks):** An **action** is a transition or move that an agent can make from one state to another state in the problem space. Actions transform the current state to a new state.  **Example:** In a route-finding problem, an action could be moving from one city to an adjacent city. In the 8-puzzle, actions are moving the blank tile up, down, left, or right.
+*   **iii. Plan (2.5 Marks):** A **plan** is a sequence of actions that, when executed starting from the initial state, leads to a goal state. In state space search, the goal is to find a plan.
 
-*   **iii. Plan (2.5 Marks):** A **plan** is a sequence of actions that, when executed starting from the initial state, leads to a goal state. In state space search, the goal is to find a plan.  **Example:** In a route-finding problem, a plan is a sequence of cities to visit to get from the starting city to the destination city.
+*   **iv. Path Cost (2.5 Marks):** The **path cost** is a numerical value associated with a path (sequence of actions) in the state space. It represents the "cost" of taking that path, typically measured in terms of resources consumed (time, distance, fuel, etc.). The search algorithm often aims to find a plan with the minimum path cost.
 
-*   **iv. Path Cost (2.5 Marks):** The **path cost** is a numerical value associated with a path (sequence of actions) in the state space. It represents the "cost" of taking that path, typically measured in terms of resources consumed (time, distance, fuel, etc.). The search algorithm often aims to find a plan with the minimum path cost. **Example:** In a route-finding problem, path cost could be the total distance traveled or the travel time.
+*   **v. Goal State (2.5 Marks):** A **goal state** is the desired final configuration or situation that represents a solution to the problem. The search process terminates when a goal state is reached. There can be multiple goal states.
 
-*   **v. Goal State (2.5 Marks):** A **goal state** is the desired final configuration or situation that represents a solution to the problem. The search process terminates when a goal state is reached. There can be multiple goal states. **Example:** In a route-finding problem, the goal state is the destination city. In the 8-puzzle, it's the desired arrangement of tiles.
-
-*   **vi. Problem Space (2.5 Marks):** The **problem space** (or state space) is the set of all possible states that can be reached from the initial state by applying actions. It is the entire space of configurations that are relevant to solving the problem.  It can be visualized as a graph where states are nodes and actions are edges. **Example:** For the 8-puzzle, the problem space is all possible arrangements of the 8 tiles and the blank space.
+*   **vi. Problem Space (2.5 Marks):** The **problem space** (or state space) is the set of all possible states that can be reached from the initial state by applying actions. It is the entire space of configurations that are relevant to solving the problem.  It can be visualized as a graph where states are nodes and actions are edges.
 
 *   **vii. Search Problem (2.5 Marks):** A **search problem** is formally defined by these components:
     *   **Initial State:**  The starting point.
