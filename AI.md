@@ -67,18 +67,19 @@ An **agent** in AI is any entity that can perceive its environment through senso
 **4. a. In the quest of developing an expert system for question answering problem, how will you describe knowledge representation in this context. (3 Marks)**
 
 *   **Capture semantic meaning:**  Represent the meaning of words, sentences, and concepts in a way that the system can understand and reason with.
-*   **Enable inference:** Support logical reasoning and inference to derive answers that are not explicitly stated in the knowledge base.
+*   **Enable inference:** Support logic
+al reasoning and inference to derive answers that are not explicitly stated in the knowledge base.
 *   **Be organized and accessible:** Structure knowledge for efficient retrieval and processing when answering questions.
 
 **4. b. State and explain the key parameters involved in creating a knowledge representation (4.5 Marks)**
 
-*   **1. Representational Adequacy:**  The ability of the representation to express all the necessary knowledge in the domain.  It should be rich enough to capture the nuances and complexities of the domain being modeled.  **Explanation:** If the representation is not adequate, some crucial information might be lost, limiting the system's ability to answer questions effectively.
+*   **1. Completeness:**  The ability of the representation to express all the necessary knowledge in the domain.  It should be rich enough to capture the nuances and complexities of the domain being modeled.
 
-*   **2. Inferential Adequacy:** The ability of the representation to support reasoning and inference. It should allow the system to deduce new knowledge from the explicitly represented facts. **Explanation:**  A good knowledge representation should not just store facts, but also enable the system to draw conclusions and answer questions that require reasoning.
+*   **2. Expressivity:** refers to how easy and compact it is to express a fact or element of knowledge within the semantics and grammar of the KR (Compactness)
 
-*   **3. Inferential Efficiency:** The ability of the representation to support efficient reasoning and inference.  The reasoning mechanisms should be computationally feasible and provide answers in a reasonable time. **Explanation:** Even if a representation is inferentially adequate, it's not useful if the inference process is too slow or computationally expensive.
+*   **3. Efficiency:** The ability of the representation to support efficient reasoning and inference.  The reasoning mechanisms should be computationally feasible and provide answers in a reasonable time. **Explanation:** Even if a representation is inferentially adequate, it's not useful if the inference process is too slow or computationally expensive.
 
-*   **4. Acquisitional Efficiency:** The ease with which new knowledge can be added to the representation. It should be relatively straightforward to update and expand the knowledge base as the domain evolves. **Explanation:**  Knowledge is constantly evolving. A good representation should be easy to update and maintain with new information.
+*   **4. Inferential Adequacy:** The ability of the representation to support reasoning and inference. It should allow the system to deduce new knowledge from the explicitly represented facts. **Explanation:**  A good knowledge representation should not just store facts, but also enable the system to draw conclusions and answer questions that require reasoning.
 
 **4. c. State how knowledge representation is specified in terms of the five distinct roles that it plays (10 Marks)**
 
@@ -178,11 +179,57 @@ The Turing Test is a test of a machine's ability to exhibit intelligent behavior
 2.  **Task:** The interrogator's goal is to determine which respondent is the machine and which is the human, solely based on their text-based responses to questions.
 3.  **Passing the Test:** The machine passes the Turing Test if the interrogator cannot reliably distinguish the machine's responses from the human's responses. In other words, if the machine can convincingly imitate human conversation to the point of fooling a human judge.
 
-**Answering the question "Can machines think?" using the Turing Test:**
 
-*   **Turing's Argument:** Turing argued that if a machine can pass the Turing Test, then we should consider it to be "thinking" or at least behaving intelligently.  He sidestepped the difficult philosophical question of "thinking" and focused on observable intelligent behavior.
-*   **Behavioral Intelligence:** The Turing Test emphasizes **behavioral intelligence**. It doesn't try to define consciousness or internal mental states. It focuses on whether a machine can *behave* in a way that we would typically associate with human intelligence.
-*   **"Thinking" vs. "Behaving Intelligently":**  The Turing Test effectively shifts the question from "Can machines think?" (which is hard to define and measure) to "Can machines behave intelligently?" (which is testable).  If a machine can consistently fool a human into thinking it's human through conversation, then it is exhibiting a form of intelligence, regardless of whether it truly "thinks" in the human sense.
-*   **Limitations:**  The Turing Test has limitations and criticisms.  It primarily tests conversational ability, not necessarily all aspects of intelligence.  A machine might pass by cleverly mimicking human conversation without genuine understanding or consciousness.  However, it remains a significant milestone and a useful benchmark for AI.
+## Assignment 1
 
-**Conclusion:** The Turing Test provides a practical and behavior-oriented way to assess machine intelligence.  By focusing on whether machines can *behave* intelligently, it offers a measurable and testable approach to evaluating AI progress, even if it doesn't definitively answer the philosophical question of "Can machines think?"
+#### Question 1: Define Intelligent
+Intelligent means the ability to learn from experience, reason, adapt to new situations, and apply knowledge to solve problems effectively. An intelligent system can understand its environment, make decisions, and improve its performance over time
+#### Question 2: What are the different approaches to defining Artificial Intelligence?
+* AI is defined as systems that **think like humans**, replicating human cognitive processes such as reasoning, learning, and memory.
+* AI is defined as machines that can **act like humans**, especially in conversation, problem-solving, and social interaction.
+* AI is seen as systems that use **logical reasoning**—following rules to reach correct conclusions.
+* AI is defined as systems that **act rationally** by taking actions that maximize their chances of achieving goals.
+#### Question 3: Five tasks you would like a computer to be able to do within the next five years
+1. Accurately diagnose medical conditions from images or symptoms in real time.
+2. Fully automate customer service with natural, human-level conversations.
+3. Drive cars safely and independently in major cities.
+4. Translate languages with human-level fluency, including African languages.
+5. Predict and prevent financial fraud before it happens.
+#### Question 4: Five tasks computers are unlikely to be able to do in the next five years
+1. Fully replace human judgment in complex legal or ethical decisions.
+2. Perform delicate physical tasks such as tailoring clothes or braiding hair with human precision.
+3. Understand human emotions perfectly in all cultural contexts.
+4. General human-level intelligence across all tasks (AGI).
+5. Autonomously run a government or lead a company without human oversight.
+
+## Assignment 2
+
+
+#### 1. Define an Agent
+An agent is an entity that perceives its environment through sensors and acts upon that environment through actuators in order to achieve specific goals.
+
+#### 2. What is a Rational Agent?
+A rational agent is an agent that selects the action that maximizes its expected performance measure, based on:
+- The information it has perceived
+- Its built-in knowledge
+- The actions available to it
+Rationality means doing the right thing, not necessarily being perfect or omniscient.
+
+#### 3. What is Bounded Rationality?
+Bounded rationality refers to the idea that an agent’s rational decision-making is limited by:
+- Incomplete information
+- Limited computational resources
+- Time constraints
+
+#### 4. What is an Autonomous Agent?
+An autonomous agent is an agent that operates independently of human control and learns from its environment, using its own experience to improve future actions.
+
+#### 5. Describe the Salient Features of an Agent
+
+1. **Perception** – Ability to sense the environment through sensors.
+2. **Action** – Ability to affect the environment using actuators.
+3. **Rationality** – Chooses actions that maximize goal achievement.
+4. **Autonomy** – Operates with minimal or no human intervention.
+5. **Learning** – Improves performance over time from experience.
+6. **Reactivity** – Responds to changes in the environment.
+7. **Proactiveness** – Takes initiative to achieve goals.
