@@ -183,12 +183,12 @@ The Turing Test is a test of a machine's ability to exhibit intelligent behavior
 ## Assignment 1
 
 #### Question 1: Define Intelligent
-Intelligent means the ability to learn from experience, reason, adapt to new situations, and apply knowledge to solve problems effectively. An intelligent system can understand its environment, make decisions, and improve its performance over time
-#### Question 2: What are the different approaches to defining Artificial Intelligence?
-* AI is defined as systems that **think like humans**, replicating human cognitive processes such as reasoning, learning, and memory.
-* AI is defined as machines that can **act like humans**, especially in conversation, problem-solving, and social interaction.
-* AI is seen as systems that use **logical reasoning**—following rules to reach correct conclusions.
-* AI is defined as systems that **act rationally** by taking actions that maximize their chances of achieving goals.
+Intelligent means the ability to learn from experience, reason, adapt to new situations, and apply knowledge to solve problems effectively.
+#### Question 2: What are the different approaches to Artificial Intelligence?
+1. **Strong AI**: This approach focuses on creating machines with genuine self-awareness and human-level reasoning. It suggests that a properly programmed computer is not just a tool, but actually possesses a mind and cognitive mental states.
+2. **Weak AI**: This approach involves building systems that act as if they are intelligent but do not possess true understanding or consciousness. It aims to simulate human cognition to perform tasks without requiring actual "thought."
+3. **Applied AI**: This is the practical branch of AI focused on creating commercially successful "smart" systems. It focuses on solving real-world problems, such as facial recognition for security systems.
+4. **Cognitive AI**: This approach uses computer models as a scientific tool to test theories about human psychology. It aims to understand how the human mind functions, specifically how we process information and solve abstract problems.
 #### Question 3: Five tasks you would like a computer to be able to do within the next five years
 1. Accurately diagnose medical conditions from images or symptoms in real time.
 2. Fully automate customer service with natural, human-level conversations.
