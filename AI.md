@@ -1,4 +1,4 @@
-**1. a. Discuss "Artificial intelligence is a branch of Science which deals with helping machines find solutions to complex problems". (5.5 Marks)**
+5**1. a. Discuss "Artificial intelligence is a branch of Science which deals with helping machines find solutions to complex problems". (5.5 Marks)**
 
 Artificial Intelligence (AI) is indeed a branch of computer science aiming to create intelligent systems.  The core idea is to enable machines to perform tasks that typically require human intelligence.  This involves designing algorithms and models that allow computers to:
 
@@ -233,3 +233,70 @@ An autonomous agent is an agent that operates independently of human control and
 5. **Learning** – Improves performance over time from experience.
 6. **Reactivity** – Responds to changes in the environment.
 7. **Proactiveness** – Takes initiative to achieve goals.
+
+
+## Another pq
+
+### **1.a. What data structure is suitable for:**
+*   **i. Depth First Search:** A **Stack** (Last-In, First-Out - LIFO).
+*   **ii. Breadth First Search:** A **Queue** (First-In, First-Out - FIFO).
+
+---
+
+### **1.b. Define the following terms:**
+*   **i. State:** A representation of a configuration of the environment at a specific point in time during the search process.
+*   **ii. Starting State:** The initial state from which the agent begins the search process.
+*   **iii. Goal state:** The target state that the agent aims to reach. A problem might have one or more goal states.
+*   **iv. Solution:** A sequence of actions (a path) that leads from the starting state to a goal state.
+*   **v. Cost Function:** A function that assigns a numeric cost to each path, often representing distance, time, or energy consumed.
+*   **vi. Complete:** A search algorithm is complete if it is guaranteed to find a solution whenever at least one exists.
+*   **vii. Optimal:** A search algorithm is optimal if it is guaranteed to find the solution with the lowest possible cost.
+
+---
+
+### **1.c. Given the following graph, perform:**
+The graph is a tree starting at node **A**, with a goal node **J**.
+*   **i. A breadth first search to move from A to J:**
+    *   BFS explores level by level.
+    *   Path: **A → B → E → J**
+    *   Nodes visited in order: A, B, C, D, E, F, G, H, I, J.
+*   **ii. A depth first search to move from A to J:**
+    *   DFS explores as deep as possible along each branch (assuming left-to-right).
+    *   Path: **A → B → E → J**
+    *   Nodes visited in order: A, B, E, I, (backtrack to E), J.
+
+---
+
+### **2.a.i. Explain uniformed search**
+Uninformed search (also known as blind search) is a strategy where the search algorithm has no additional information about the states beyond that provided in the problem definition. It can generate successors and distinguish a goal state from a non-goal state, but it doesn't know "how far" it is from the goal.
+
+### **2.a.ii. List the two types of uniformed search and differentiate them.**
+Two common types are **Breadth-First Search (BFS)** and **Depth-First Search (DFS)**.
+*   **BFS** explores nodes level-by-level using a queue. It is optimal (finds the shortest path) and complete, but requires a lot of memory.
+*   **DFS** explores a branch as deep as possible before backtracking using a stack. It is not always optimal or complete (in infinite spaces) but uses significantly less memory than BFS.
+
+### **2.b. What are the advantages that each has over the other**
+*   **Advantages of BFS over DFS:** It is guaranteed to find the shortest path (optimal) in an unweighted graph and is complete.
+*   **Advantages of DFS over BFS:** It has much lower memory requirements (space complexity is linear vs. exponential for BFS). It can also find a solution faster if the goal is located deep in the search tree.
+
+---
+
+### **3.a. Define a problem space**
+A problem space (or state space) is the set of all possible states that can be reached from the initial state by applying any sequence of valid actions.
+
+### **3.b. State the elements of a search problem**
+1.  **Initial State**
+2.  **Actions (Operators)**
+3.  **Transition Model (Successor function)**
+4.  **Goal Test**
+5.  **Path Cost function**
+
+### **3.c. Using the graph below, find a path between goal node U and initial state P. Use the graph to explain the elements of search problem.**
+*   **Path from P to U:** From the directed graph, the sequence is: **P → r → t → s → u**.
+
+**Explanation of elements using the graph:**
+1.  **Initial State:** Node **P**, where the search begins.
+2.  **Actions:** The possible moves from a node, e.g., from node **s**, the actions are "move to **u**" or "move to **r**".
+3.  **Transition Model:** This is defined by the arrows. For example, moving from **P** leads to state **r**.
+4.  **Goal Test:** A check to see if we have reached node **u**. Once the agent is at **u**, the search terminates successfully.
+5.  **Path Cost:** The sum of costs of the edges in the path. If each step has a cost of 1, the total path cost from P to U is 4.
