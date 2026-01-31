@@ -1,4 +1,4 @@
-5**1. a. Discuss "Artificial intelligence is a branch of Science which deals with helping machines find solutions to complex problems". (5.5 Marks)**
+**1. a. Discuss "Artificial intelligence is a branch of Science which deals with helping machines find solutions to complex problems". (5.5 Marks)**
 
 Artificial Intelligence (AI) is indeed a branch of computer science aiming to create intelligent systems.  The core idea is to enable machines to perform tasks that typically require human intelligence.  This involves designing algorithms and models that allow computers to:
 
