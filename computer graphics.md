@@ -232,19 +232,6 @@ Full table ( round x to nearest integer):
 
 ### 3(c) Given pixel (xᵢ, yᵢ) on the line yᵢ = mxᵢ + b, develop the DDA algorithm — 7 marks
 
-**Derivation:**
-
-For a unit step in x, the next pixel is at xᵢ₊₁ = xᵢ + 1. Substituting into the line equation:
-
-```
-yᵢ₊₁ = m·xᵢ₊₁ + b
-     = m(xᵢ + 1) + b
-     = (m·xᵢ + b) + m
-∴ yᵢ₊₁ = yᵢ + m
-```
-
-So each unit step in x increases y by exactly the slope m — the next point is obtained by **addition only** (this is what makes DDA incremental). Similarly, stepping in y: xᵢ₊₁ = xᵢ + 1/m.
-
 **Algorithm:**
 
 1. Input the endpoints; compute dx = x₂−x₁, dy = y₂−y₁, m = dy/dx.
@@ -265,25 +252,6 @@ So each unit step in x increases y by exactly the slope m — the next point is 
 ### 4(a) Develop Bresenham's line algorithm for P₁(x₁′, y₁′) followed by P₂ in the horizontal direction — 10 marks
 
 "Horizontal direction" means the line's major axis is x (slope 0 ≤ m ≤ 1), so **x increases by 1 every step** and the only decision is whether y stays or increases.
-
-**Derivation of the decision parameter:**
-
-After plotting pixel (xₖ, yₖ), the next column is xₖ+1 and the true line there is y = m(xₖ+1) + b. The candidates are the pixel **E** = (xₖ+1, yₖ) and the pixel **NE** = (xₖ+1, yₖ+1). The two distances are:
-
-```
-d_lower = y − yₖ            (gap below the line to E)
-d_upper = (yₖ + 1) − y      (gap above the line to NE)
-```
-
-Define the decision parameter pₖ = Δx·(d_lower − d_upper). Expanding with m = Δy/Δx and keeping integers:
-
-```
-pₖ = 2Δy·xₖ − 2Δx·yₖ + c        (c is a constant that cancels out)
-```
-
-- If **pₖ < 0**: the line is closer to E → keep y; and pₖ₊₁ = pₖ + 2Δy
-- If **pₖ ≥ 0**: the line is closer to NE → y = y + 1; and pₖ₊₁ = pₖ + 2Δy − 2Δx
-- Initial value: **p₀ = 2Δy − Δx**
 
 **Algorithm:**
 
@@ -344,7 +312,7 @@ pₖ = 2Δy·xₖ − 2Δx·yₖ + c        (c is a constant that cancels out)
 
 1. **Works only for circles** (and arcs) — ellipses and other curves need different algorithms.
 2. The **decision-parameter derivation is complex**, and the circle still shows staircase effects (aliasing).
-  *
+  - 
   1. **Assumes integer centre and radius** — non-integer inputs need adaptation.)*
 
 ### 5(b) Define attribute parameter — 1 mark
@@ -443,6 +411,102 @@ The pipeline turns a 3D scene description into pixels, in four broad blocks — 
 
 ---
 
+## CLASS-DISCUSSION AREAS
+
+### C1 — Fundamentals of computer graphics
+
+The core building blocks the subject rests on:
+
+- **Pixel & raster** — the screen is a grid of pixels; a raster image is that grid stored in the **frame buffer**.
+- **Vector vs raster** — *vector* graphics store objects as geometric primitives (points, lines, polygons, curves) defined by equations → resolution-independent; *raster* graphics store a fixed pixel grid → resolution-dependent.
+- **Primitives** — the atoms of a scene: point, line, polygon, circle/curve, text.
+- **Coordinate systems** — objects live in model → world → view → screen coordinates.
+- **The three activities of CG** — **modeling** (describe the object), **rendering** (turn the model into an image), **animation** (change it over time).
+
+### C2 — Visualization and the reasons for it
+
+**Visualization** = using computer graphics to turn **data or abstract concepts into visual images** so they can be understood and explored. Two branches: **scientific visualization** (physical/spatial data — medical scans, fluid flow, weather) and **information visualization** (abstract data — charts, graphs, trees, networks).
+
+**Reasons for visualization:**
+
+1. **Insight** — reveals patterns, trends and anomalies hidden in raw numbers.
+2. **Handles large/complex data** — compresses huge datasets into one comprehensible picture.
+3. **Faster communication** — a picture conveys meaning quicker than tables or text.
+4. **Supports exploration & decision-making** — helps form and test hypotheses.
+5. **Error/outlier detection** — odd values stand out visually.
+6. **Exploits the human visual system**, which is highly parallel and excellent at spotting shapes and patterns.
+
+### C3 — Reasons for studying computer graphics
+
+1. **Ubiquity** — GUIs, games, films, web, mobile apps all depend on it.
+2. **Industry demand** — games, film/VFX, CAD, simulation, VR/AR, data visualization.
+3. **Foundation for related fields** — computer vision, image processing, HCI, visualization all build on it.
+4. **Enables scientific & data visualization** — the main way we "see" complex data.
+5. **Understanding the hardware** — how displays, frame buffers and GPUs actually work.
+6. **Intellectually rich** — combines mathematics, physics (light), algorithms and art.
+
+### C4 — Computer Graphics vs Computer Vision vs Image Processing
+
+They form a cycle around the pair (**model ↔ image**):
+
+
+|                       | **Input**              | **Output**                   | **Direction**                                           |
+| --------------------- | ---------------------- | ---------------------------- | ------------------------------------------------------- |
+| **Computer Graphics** | geometric model / data | image                        | model → image (**synthesis**)                           |
+| **Computer Vision**   | image                  | model / description of scene | image → model (**analysis**, the *inverse* of graphics) |
+| **Image Processing**  | image                  | modified image               | image → image (enhance / transform)                     |
+| **Visualization**     | data                   | image                        | data → image (a *use* of graphics)                      |
+
+
+*Key line:* **computer graphics turns a description into a picture; computer vision turns a picture into a description** — they are inverses. Image processing stays image-to-image, and visualization is graphics applied to data.
+
+### C5 — Camera analogy (the synthetic camera model)
+
+Forming a computer image mirrors **taking a photograph**:
+
+1. **Position & aim the camera** → the **viewing transformation** (where the eye is and which way it looks).
+2. **Arrange the objects** → **modeling** (place the scene).
+3. **Choose a lens / zoom** → the **projection** (perspective or orthographic; sets the field of view).
+4. **Expose the film** → the scene is projected onto the **view plane (image plane)** and captured into the **frame buffer** (rasterization).
+
+**Why it matters:** in the synthetic camera model, specifying the **camera** and specifying the **objects** are *independent* — exactly like a real camera, moving the viewpoint does not change the objects. The camera's **field of view** acts as the clip window, and the **film** is the frame buffer.
+
+### C6 — 2D vs 3D representation
+
+- **2D representation** — objects described in a plane with **(x, y)** coordinates; no depth. Two forms: **raster** (a grid of pixels — bitmap images) and **vector** (primitives — points, lines, polygons, curves — defined by equations).
+- **3D representation** — objects described in space with **(x, y, z)**; must capture **depth** and then be **projected to 2D** for display, needing hidden-surface removal, lighting and projection. Common 3D schemes: **wireframe** (vertices + edges), **surface/boundary** (polygon mesh, NURBS), **solid** (full volume — CSG, voxels).
+
+*One-liner:* 2D is drawn directly; 3D must be **modeled in space then projected** onto the 2D screen.
+
+### C7 — Geometric modeling processes (representation schemes)
+
+How a solid object is described to the computer:
+
+1. **Wireframe modeling** — only **vertices and edges**; simplest but **ambiguous** (no surface/volume info).
+2. **Surface (boundary) modeling** — defines the object's **skin**: **polygon meshes** and parametric surfaces (**Bézier, B-spline, NURBS**). Good for rendering; still no "inside".
+3. **Solid modeling** — represents the **full volume**, unambiguous. Two main methods:
+  - **CSG (Constructive Solid Geometry)** — combine primitives (box, sphere, cylinder) with Boolean **union / intersection / difference**.
+  - **B-rep (Boundary Representation)** — faces, edges and vertices plus their **topology**.
+  - *(also spatial-occupancy: voxels / octrees.)*
+4. *(Extras: **procedural / parametric** and **fractal** modeling.)*
+
+### C8 — Polygon (the fundamental surface primitive)
+
+A **polygon** is a closed, planar figure bounded by straight edges (triangle, quad). Curved surfaces are approximated by a **polygon mesh** — many connected polygons sharing vertices and edges. Polygons dominate because they are **simple, fast to rasterize and hardware-accelerated**; **triangles** especially, since they are always planar and convex. Stored as a **vertex list** plus edge/face lists.
+
+### C9 — Mathematical prerequisites for computer graphics
+
+- **Coordinate geometry** — points, lines, planes, coordinate systems.
+- **Vectors** — addition, **dot & cross products** (normals, angles, lighting).
+- **Matrices & linear algebra** — the machinery of all transformations and projection.
+- **Trigonometry** — rotations and angles.
+- **Analytic geometry / curves** — lines, circles, conics, parametric curves.
+- **Homogeneous coordinates** — the (x, y, 1) trick that unifies the transforms (see A3).
+
+> 💡 **Correction to the class note:** homogeneous coordinates are **not** merely "a vector that allows rotations" — rotation already works with a plain 2×2 matrix. Their real purpose is to make **translation and perspective** into matrix multiplications so *every* transform is uniform and composable (see A3).
+
+---
+
 ## ⚡ Last-minute cram sheet
 
 **Transformations:** 90° CCW (x,y)→(−y,x) · y=−x reflection (x,y)→(−y,−x) · y=x reflection (x,y)→(y,x)
@@ -468,3 +532,15 @@ The pipeline turns a 3D scene description into pixels, in four broad blocks — 
 **Rendering pipeline:** Model → World → View → Projection → Clip → Screen → Rasterize → Display.
 
 **Modeling:** turns a real/imagined object into structured data the computer can store, transform and render.
+
+**Graphics vs Vision:** graphics = model → image (synthesis); vision = image → model (analysis, the inverse); image processing = image → image; visualization = data → image.
+
+**Visualization:** turning data/concepts into pictures for insight; reasons = insight, big-data, fast communication, exploration, exploits the human eye.
+
+**Camera analogy:** aim camera (viewing) → arrange scene (modeling) → pick lens (projection) → expose film/frame buffer (rasterize); camera and objects are specified independently.
+
+**2D vs 3D:** 2D = (x,y), raster or vector, drawn directly; 3D = (x,y,z), modeled in space then projected to the screen.
+
+**Modeling schemes:** wireframe (verts+edges, ambiguous) → surface/B-rep (mesh, NURBS) → solid (CSG Booleans / B-rep / voxels).
+
+**Polygon:** closed straight-edged figure; curved surfaces = polygon mesh; triangles win (planar, convex, hardware-fast).
