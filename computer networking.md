@@ -505,3 +505,63 @@ S = A / T = 25 MB ÷ 120 s = 0.208 MB/s
          = 0.208 × 1024 ≈ 213 KB/s
 ```
 
+---
+
+# PART E — Short-Answer / Review Questions (Chapter 1 concepts)
+
+### E1. The three types of convergence
+
+**Convergence** = the coming together of different network applications and the technologies that support them **into a single technology capable of supporting various applications.** Three types:
+
+
+| Type                                  | Meaning                                                                                                                 | Example                                                                                                                                                                                                                                                                                                              |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Network convergence**               | carrying voice, video, and data over a *single* network (typically an IP network) instead of separate networks for each | Computers + modems sending data over the **telephone (voice) system**; **VoIP** (voice as packets over data networks); photo-enabled cell phones. The telephone network, the cable-TV network, and the data network collapse into one. This is what makes VoIP, IPTV, and internet all ride the same infrastructure. |
+| **Device (terminal) convergence**     | a single device performing functions that once needed many separate devices.                                            | A smartphone is the classic example: telephone, camera, TV, music player, computer, GPS, and web terminal in one unit.                                                                                                                                                                                               |
+| **Service (application) convergence** | bundling formerly distinct services so they are offered together                                                        | triple play" (voice + internet + television) or "quad play" (adding mobile) from a single provider over a single connection                                                                                                                                                                                          |
+
+
+### E2. Why are the application and transport layers called "end-to-end" layers?
+
+Because they **operate only at the two endpoints of a connection — the original sender and the final receiver — and not at the intermediate nodes (routers) along the path.** They handle the data exchanged *between the endpoints*: e.g., the transport layer performs **end-to-end error control and flow control** only at the source and destination. The lower three layers (network, network access, physical) instead do their work at **every node/hop** along the route, so they are *not* end-to-end.
+
+### E3. What are synchronization points?
+
+**Synchronization points are backup/checkpoint markers inserted by the *session layer* into a data stream, used to recover from errors or failures.** If an error occurs during transmission, both sender and receiver can **back up to the last synchronization point and resume from there** instead of restarting the whole transfer. *Example:* when sending a large document (e.g., an e-book), a sync point is placed at the end of each chapter, so a failure only means re-sending from the start of the current chapter.
+
+### E4. Data communication vs Telecommunication
+
+
+| **Data communication**                                                                                | **Telecommunication**                                                                                    |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| The exchange/transfer of **digital data (bits)** between two devices (e.g., computers) over a medium. | The transmission of information — **voice, video *and* data** — **over a distance** by electronic means. |
+| Narrower: concerned specifically with **computer data**.                                              | Broader field: telephone, radio, TV, plus data.                                                          |
+| Devices are typically computers/terminals.                                                            | Any communicating devices over distance.                                                                 |
+
+
+*In short:* data communication (digital-data exchange between computing devices) is essentially a **subset** of telecommunication (communicating any information over distance). **Convergence** is now blurring this line — data rides telecom networks and voice rides data networks.
+
+### E5. What is network management?
+
+**Network management is the design, installation, and support of a network and its hardware and software** — i.e., the ongoing work of **configuring, monitoring, maintaining, securing and improving** a network's performance and reliability (often administered from a single point using tools such as **SNMP**, the Simple Network Management Protocol).
+
+### E6. What language must a home computer talk to interface with the Internet?
+
+**TCP/IP** (the **TCP and IP** protocols — the TCP/IP protocol suite). The Internet "talks" **only TCP/IP**, so the home computer must run software that supports TCP/IP; once it is "talking TCP/IP," it can establish a connection to the Internet (typically through an **ISP** over a dial-up, DSL, or cable-modem link).
+
+### E7. How does convergence apply to the communications industry?
+
+Convergence has had a **particularly strong impact on the telecommunications industry**, in several ways:
+
+- **Protocol / technological:** the market converging on **TCP/IP**, and on **Ethernet** in LANs — with **Metro Ethernet** spreading into MAN/WAN so a business could run **one technology end-to-end**; older services like **frame relay/ATM** giving way to **Ethernet and MPLS/VPN over IP** backbones.
+- **Voice + data merging:** **VoIP**; **Computer-Telephony Integration (CTI)** — a network treats an incoming phone call like an arriving e-mail; and **Unified Communications** — messaging, telephony and video conferencing merged into one consumer-friendly interface.
+
+It refers to the blurring and merging of industries that were once entirely separate — **telecommunications, broadcasting/media, and computing (IT)**. Historically, telephone companies carried voice, broadcasters carried television, and computer networks carried data, each on its own dedicated infrastructure with its own regulators and business models.
+
+Digitisation changed this: once voice, video, and data are all reduced to bits, they can all travel over the same IP network. The consequence is that a single company can now deliver telephone service, television, and internet together; your phone, TV, and computer increasingly do each other's jobs; and the boundaries between the telecom operator, the cable company, the broadcaster, and the internet provider have largely dissolved. That collapse of once-distinct sectors onto a shared digital platform is what convergence means for the communications industry.
+
+In short, distinct voice, data and video systems — and the companies and protocols behind them — are collapsing into **unified, IP-based networks and services.**
+
+---
+
+*Parts A & E grounded in "Data Communications and Computer Networks: A Business User's Approach" (White). Part D grounded in the lecturer's **CSC 411** slide deck and the **transmission-modes** handout. Parts B & C use the Information/Entropy pages provided and standard source-coding methods.*
