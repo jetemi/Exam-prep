@@ -687,63 +687,29 @@ For a program to be **reliable**, it means that it consistently performs its int
 
 **In short:** A reliable program is one you can trust to do what it is supposed to do, consistently and correctly, even when faced with unexpected situations or over extended periods. It minimizes failures and errors, providing a stable and dependable service.
 
-**(ii) Evaluate the following postfix expression: 6 5 2 3 + 8 * + 3 + (5½ Mks)**
+**(ii) Evaluate the following postfix expression: 6 5 2 3 + 8 * + 3 + * (5½ Mks)**
 
-To evaluate the postfix expression `6 5 2 3 + 8 * + 3 +`, we'll use a stack. We process the expression from left to right.
+To evaluate `6 5 2 3 + 8 * + 3 + *`, use a stack, processing left to right: push each operand; on an operator, pop the top two (operand1 = second-popped, operand2 = top), compute `operand1 operator operand2`, and push the result. The single value left on the stack is the answer.
 
-**Steps:**
-
-1. **Initialize an empty stack.**
-2. **Scan the postfix expression from left to right.**
-3. **For each element:**
-  - **If it's an operand (number):** Push it onto the stack.
-  - **If it's an operator (+, -, , /):*
-    - Pop the top two operands from the stack. Let's say the first popped operand is `operand2` (top of the stack) and the second popped operand is `operand1` (next to top).
-    - Perform the operation `operand1 operator operand2`.
-    - Push the result back onto the stack.
-4. **After processing the entire expression, the final result will be the only value left on the stack.**
-
-**Evaluation of `6 5 2 3 + 8 * + 3 +`:**
+**Evaluation of `6 5 2 3 + 8 * + 3 + *`:**
 
 
-| Element | Action                          | Stack (bottom to top) | Explanation                                       |
-| ------- | ------------------------------- | --------------------- | ------------------------------------------------- |
-| 6       | Push 6                          | `[6]`                 | Operand, push onto stack                          |
-| 5       | Push 5                          | `[6, 5]`              | Operand, push onto stack                          |
-| 2       | Push 2                          | `[6, 5, 2]`           | Operand, push onto stack                          |
-| 3       | Push 3                          | `[6, 5, 2, 3]`        | Operand, push onto stack                          |
-| +       | Pop 3, Pop 2, 2+3=5, Push 5     | `[6, 5, 5]`           | Operator '+', operands 2 and 3, result 5 pushed   |
-| 8       | Push 8                          | `[6, 5, 5, 8]`        | Operand, push onto stack                          |
-| *       | Pop 8, Pop 5, 5*8=40, Push 40   | `[6, 5, 40]`          | Operator '*', operands 5 and 8, result 40 pushed  |
-| +       | Pop 40, Pop 5, 5+40=45, Push 45 | `[6, 45]`             | Operator '+', operands 5 and 40, result 45 pushed |
-| 3       | Push 3                          | `[6, 45, 3]`          | Operand, push onto stack                          |
-| +       | Pop 3, Pop 45, 45+3=48, Push 48 | `[6, 48]`             | Operator '+', operands 45 and 3, result 48 pushed |
+| Element | Action                              | Stack (bottom to top) | Explanation   |
+| ------- | ----------------------------------- | --------------------- | ------------- |
+| 6       | Push 6                              | `[6]`                 |               |
+| 5       | Push 5                              | `[6, 5]`              |               |
+| 2       | Push 2                              | `[6, 5, 2]`           |               |
+| 3       | Push 3                              | `[6, 5, 2, 3]`        |               |
+| +       | Pop 3, Pop 2, 2+3=5, Push 5         | `[6, 5, 5]`           | 2 + 3 = 5     |
+| 8       | Push 8                              | `[6, 5, 5, 8]`        |               |
+| *       | Pop 8, Pop 5, 5*8=40, Push 40       | `[6, 5, 40]`          | 5 * 8 = 40    |
+| +       | Pop 40, Pop 5, 5+40=45, Push 45     | `[6, 45]`             | 5 + 40 = 45   |
+| 3       | Push 3                              | `[6, 45, 3]`          |               |
+| +       | Pop 3, Pop 45, 45+3=48, Push 48     | `[6, 48]`             | 45 + 3 = 48   |
+| *       | Pop 48, Pop 6, 6*48=288, Push 288   | `[288]`               | 6 * 48 = 288  |
 
 
-After processing all elements, the stack contains `[6, 48]`. However, there seems to be an extra '6' at the beginning of the stack that shouldn't be there based on the postfix expression. Let's re-examine the postfix expression:  `6 5 2 3 + 8 * + 3 +`
-
-Let me re-evaluate, it seems I made a mistake in reading the stack at the end. The stack should only contain the final result after evaluation.
-
-**Corrected Evaluation of `6 5 2 3 + 8 * + 3 +`:**
-
-
-| Element | Action                          | Stack (bottom to top) | Explanation                                       |
-| ------- | ------------------------------- | --------------------- | ------------------------------------------------- |
-| 6       | Push 6                          | `[6]`                 | Operand, push onto stack                          |
-| 5       | Push 5                          | `[6, 5]`              | Operand, push onto stack                          |
-| 2       | Push 2                          | `[6, 5, 2]`           | Operand, push onto stack                          |
-| 3       | Push 3                          | `[6, 5, 2, 3]`        | Operand, push onto stack                          |
-| +       | Pop 3, Pop 2, 2+3=5, Push 5     | `[6, 5, 5]`           | Operator '+', operands 2 and 3, result 5 pushed   |
-| 8       | Push 8                          | `[6, 5, 5, 8]`        | Operand, push onto stack                          |
-| *       | Pop 8, Pop 5, 5*8=40, Push 40   | `[6, 5, 40]`          | Operator '*', operands 5 and 8, result 40 pushed  |
-| +       | Pop 40, Pop 5, 5+40=45, Push 45 | `[6, 45]`             | Operator '+', operands 5 and 40, result 45 pushed |
-| 3       | Push 3                          | `[6, 45, 3]`          | Operand, push onto stack                          |
-| +       | Pop 3, Pop 45, 45+3=48, Push 48 | `[48]`                | Operator '+', operands 45 and 3, result 48 pushed |
-
-
-**Final Result:** After processing the entire expression, the stack contains only `[48]`.
-
-Therefore, the value of the postfix expression `6 5 2 3 + 8 * + 3 +` is **48**.
+**Final Result:** the stack contains only `[288]`. Therefore, the value of the postfix expression `6 5 2 3 + 8 * + 3 + *` is **288**.
 
 **5a. (i) Briefly describe the terms "Type checking" as used in programming languages (2½ Mks)**
 
@@ -758,60 +724,62 @@ The two main uses of Type Checking are:
 
 **5b. Convert (A - (B + C)) * D ^ (E + F) infix expression to postfix expression (6Mks)**
 
-**Postfix Expression:**  `A B C + - D E F + ^ `*
+**Postfix Expression:** `A B C + - D E F + ^ *`
 
-**Step-by-step conversion using a stack (as previously detailed and corrected):**
-
-
-| Token | Action                                                               | Operator Stack (bottom to top) | Postfix Expression      |
-| ----- | -------------------------------------------------------------------- | ------------------------------ | ----------------------- |
-| `(`   | Push `(`                                                             | `[`(`]`                        | ``                      |
-| `A`   | Append `A`                                                           | `[`(`]`                        | `A`                     |
-| `-`   | Push `-`                                                             | `[`(`,-`]`                     | `A`                     |
-| `(`   | Push `(`                                                             | `[`(`,-`,`(`]`                 | `A`                     |
-| `B`   | Append `B`                                                           | `[`(`,-`,`(`]`                 | `A B`                   |
-| `+`   | Push `+`                                                             | `[`(`,-`,`(`,`+`]`             | `A B`                   |
-| `C`   | Append `C`                                                           | `[`(`,-`,`(`,`+`]`             | `A B C`                 |
-| `)`   | Pop `+`, append; Pop `(` discard                                     | `[`(`,-`]`                     | `A B C +`               |
-| `*`   | Push `*` (higher precedence than `-`)                                | `[`(`,-`,`*`]`                 | `A B C +`               |
-| `D`   | Append `D`                                                           | `[`(`,-`,`*`]`                 | `A B C + D`             |
-| `^`   | Push `^` (higher precedence than `*`)                                | `[`(`,-`,`*`,`^`]`             | `A B C + D`             |
-| `(`   | Push `(`                                                             | `[`(`,-`,`*`,`^`,`(`]`         | `A B C + D`             |
-| `E`   | Append `E`                                                           | `[`(`,-`,`*`,`^`,`(`]`         | `A B C + D E`           |
-| `+`   | Push `+`                                                             | `[`(`,-`,`*`,`^`,`(`,`+`]`     | `A B C + D E`           |
-| `F`   | Append `F`                                                           | `[`(`,-`,`*`,`^`,`(`,`+`]`     | `A B C + D E F`         |
-| `)`   | Pop `+`, append; Pop `(` discard                                     | `[`(`,-`,`*`,`^`]`             | `A B C + D E F +`       |
-| End   | Pop `^`, append; Pop `*`, append; Pop `-`, append; Pop `(` (discard) | `[]`                           | `A B C + D E F + ^ * -` |
+**Step-by-step conversion (shunting-yard; precedence: ^ > * > + = -):**
 
 
-**Corrected Postfix Expression (after careful re-evaluation and manual verification):**  `**A B C + - D E F + ^ **`*
-
-**5c. Evaluate the following postfix expression: 6 2 3 + - 3 8 2 / * + 3 ^ + (6 Mks)**
-
-**Value of Postfix Expression:** **2210**
-
-**Step-by-step evaluation using a stack (as previously detailed and corrected):**
-
-
-| Element | Action                                    | Stack (bottom to top) | Explanation      |
-| ------- | ----------------------------------------- | --------------------- | ---------------- |
-| 6       | Push 6                                    | `[6]`                 |                  |
-| 2       | Push 2                                    | `[6, 2]`              |                  |
-| 3       | Push 3                                    | `[6, 2, 3]`           |                  |
-| +       | Pop 3, Pop 2, 2+3=5, Push 5               | `[6, 5]`              | 2 + 3 = 5        |
-| -       | Pop 5, Pop 6, 6-5=1, Push 1               | `[1]`                 | 6 - 5 = 1        |
-| 3       | Push 3                                    | `[1, 3]`              |                  |
-| 8       | Push 8                                    | `[1, 3, 8]`           |                  |
-| 2       | Push 2                                    | `[1, 3, 8, 2]`        |                  |
-| /       | Pop 2, Pop 8, 8/2=4, Push 4               | `[1, 3, 4]`           | 8 / 2 = 4        |
-| *       | Pop 4, Pop 3, 3*4=12, Push 12             | `[1, 12]`             | 3 * 4 = 12       |
-| +       | Pop 12, Pop 1, 1+12=13, Push 13           | `[13]`                | 1 + 12 = 13      |
-| 3       | Push 3                                    | `[13, 3]`             |                  |
-| ^       | Pop 3, Pop 13, 13^3=2197, Push 2197       | `[2197]`              | 13 ^ 3 = 2197    |
-| +       | Pop 2197, Pop 13, 13+2197=2210, Push 2210 | `[2210]`              | 13 + 2197 = 2210 |
+| Token | Action                                | Operator Stack | Postfix Output          |
+| ----- | ------------------------------------- | -------------- | ----------------------- |
+| `(`   | Push `(`                              | `(`            |                         |
+| `A`   | Output `A`                            | `(`            | `A`                     |
+| `-`   | Push `-`                              | `( -`          | `A`                     |
+| `(`   | Push `(`                              | `( - (`        | `A`                     |
+| `B`   | Output `B`                            | `( - (`        | `A B`                   |
+| `+`   | Push `+`                              | `( - ( +`      | `A B`                   |
+| `C`   | Output `C`                            | `( - ( +`      | `A B C`                 |
+| `)`   | Pop `+` → output; discard `(`         | `( -`          | `A B C +`               |
+| `)`   | Pop `-` → output; discard `(`         | (empty)        | `A B C + -`             |
+| `*`   | Push `*`                              | `*`            | `A B C + -`             |
+| `D`   | Output `D`                            | `*`            | `A B C + - D`           |
+| `^`   | Push `^` (higher precedence than `*`) | `* ^`          | `A B C + - D`           |
+| `(`   | Push `(`                              | `* ^ (`        | `A B C + - D`           |
+| `E`   | Output `E`                            | `* ^ (`        | `A B C + - D E`         |
+| `+`   | Push `+`                              | `* ^ ( +`      | `A B C + - D E`         |
+| `F`   | Output `F`                            | `* ^ ( +`      | `A B C + - D E F`       |
+| `)`   | Pop `+` → output; discard `(`         | `* ^`          | `A B C + - D E F +`     |
+| End   | Pop `^` → output; Pop `*` → output    | (empty)        | `A B C + - D E F + ^ *` |
 
 
-**Final Value: 2210**
+**Final Postfix Expression:** `A B C + - D E F + ^ *`
+
+**5c. Evaluate the following postfix expression: 6 2 3 + - 3 8 2 / + * 2 ^ 3 + (6 Mks)**
+
+**Value of Postfix Expression:** **52**
+
+**Step-by-step evaluation using a stack:**
+
+
+| Element | Action                          | Stack (bottom to top) | Explanation |
+| ------- | ------------------------------- | --------------------- | ----------- |
+| 6       | Push 6                          | `[6]`                 |             |
+| 2       | Push 2                          | `[6, 2]`              |             |
+| 3       | Push 3                          | `[6, 2, 3]`           |             |
+| +       | Pop 3, Pop 2, 2+3=5, Push 5     | `[6, 5]`              | 2 + 3 = 5   |
+| -       | Pop 5, Pop 6, 6-5=1, Push 1     | `[1]`                 | 6 - 5 = 1   |
+| 3       | Push 3                          | `[1, 3]`              |             |
+| 8       | Push 8                          | `[1, 3, 8]`           |             |
+| 2       | Push 2                          | `[1, 3, 8, 2]`        |             |
+| /       | Pop 2, Pop 8, 8/2=4, Push 4     | `[1, 3, 4]`           | 8 / 2 = 4   |
+| +       | Pop 4, Pop 3, 3+4=7, Push 7     | `[1, 7]`              | 3 + 4 = 7   |
+| *       | Pop 7, Pop 1, 1*7=7, Push 7     | `[7]`                 | 1 * 7 = 7   |
+| 2       | Push 2                          | `[7, 2]`              |             |
+| ^       | Pop 2, Pop 7, 7^2=49, Push 49   | `[49]`                | 7 ^ 2 = 49  |
+| 3       | Push 3                          | `[49, 3]`             |             |
+| +       | Pop 3, Pop 49, 49+3=52, Push 52 | `[52]`                | 49 + 3 = 52 |
+
+
+**Final Value: 52**
 
 **6a.**
 
